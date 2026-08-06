@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIBE — Where appreciation becomes culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1D3A;
+    --teal:#0AA6A6;
+    --light-teal:#4FD1C5;
+    --gold:#F2B233;
+    --white:#FFFFFF;
+    --light-grey:#F0F4F8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.6;background:var(--white);}
+  a{text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* ── Nav ─────────────────────────────────────────── */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--navy);}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:700;font-size:18px;letter-spacing:1px;}
+  .brand span{color:var(--gold);}
+  .brand img{height:34px;width:auto;display:block;}
+  .footer-logo img{height:46px;width:auto;display:block;margin:0 auto 14px;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:var(--white);font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;color:var(--light-teal);}
+
+  /* ── Hero ────────────────────────────────────────── */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,#13284d 100%);color:var(--white);padding:90px 24px 100px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-120px;right:-120px;width:320px;height:320px;border-radius:50%;border:1.5px solid rgba(79,209,197,.25);}
+  .hero::after{content:'';position:absolute;bottom:-160px;left:-100px;width:280px;height:280px;border-radius:50%;border:1.5px solid rgba(242,178,51,.18);}
+  .eyebrow{display:inline-block;color:var(--gold);font-size:13px;letter-spacing:3px;font-weight:600;text-transform:uppercase;margin-bottom:18px;}
+  .hero h1{font-size:44px;font-weight:700;max-width:760px;margin:0 auto 18px;}
+  .hero h1 em{font-family:'Pacifico',cursive;font-style:normal;color:var(--light-teal);font-weight:400;}
+  .hero p{font-size:17px;max-width:620px;margin:0 auto 36px;opacity:.88;}
+  .btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;transition:transform .15s, box-shadow .15s;}
+  .btn-primary{background:var(--gold);color:var(--navy);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(242,178,51,.35);}
+  .btn-outline{background:transparent;border:1.5px solid var(--light-teal);color:var(--white);margin-left:14px;}
+  .btn-outline:hover{background:rgba(79,209,197,.12);}
+
+  /* ── Sections ────────────────────────────────────── */
+  section{padding:80px 24px;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 50px;}
+  .section-head .eyebrow{color:var(--teal);}
+  .section-head h2{font-size:32px;font-weight:700;margin-bottom:14px;}
+  .section-head p{color:#5b6b82;font-size:16px;}
+
+  /* ── Modules grid ────────────────────────────────── */
+  .modules{background:var(--light-grey);}
+  .module-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;}
+  .module-card{background:var(--white);border-radius:14px;padding:30px 26px;border-top:4px solid var(--teal);box-shadow:0 6px 24px rgba(11,29,58,.06);transition:transform .2s, box-shadow .2s;}
+  .module-card:nth-child(2){border-top-color:var(--gold);}
+  .module-card:nth-child(3){border-top-color:var(--navy);}
+  .module-card:nth-child(4){border-top-color:var(--light-teal);}
+  .module-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(11,29,58,.12);}
+  .module-icon{font-size:30px;margin-bottom:14px;}
+  .module-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+  .module-card p{font-size:14px;color:#5b6b82;margin-bottom:14px;}
+  .module-card ul{list-style:none;font-size:13.5px;color:#43536b;}
+  .module-card li{padding:4px 0;padding-left:20px;position:relative;}
+  .module-card li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+  /* ── Suite / single-login banner ─────────────────── */
+  .suite{background:var(--navy);color:var(--white);text-align:center;}
+  .suite .eyebrow{color:var(--light-teal);}
+  .suite h2{font-size:30px;font-weight:700;margin-bottom:16px;}
+  .suite p{max-width:680px;margin:0 auto 30px;opacity:.85;font-size:16px;}
+  .suite-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+  .pill{background:rgba(255,255,255,.08);border:1px solid rgba(79,209,197,.35);color:var(--white);padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:500;}
+
+  /* ── Why VIBE ────────────────────────────────────── */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+  .why-item{text-align:center;padding:0 10px;}
+  .why-icon{width:54px;height:54px;border-radius:14px;background:var(--light-grey);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 16px;}
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .why-item p{font-size:13.5px;color:#5b6b82;}
+
+  /* ── CTA ─────────────────────────────────────────── */
+  .cta{background:linear-gradient(120deg,var(--teal),var(--light-teal));color:var(--navy);text-align:center;border-radius:20px;max-width:1052px;margin:0 auto 80px;padding:60px 30px;}
+  .cta h2{font-size:28px;font-weight:700;margin-bottom:12px;}
+  .cta p{font-size:15.5px;max-width:520px;margin:0 auto 28px;opacity:.85;}
+  .cta .btn-primary{background:var(--navy);color:var(--white);}
+  .cta .btn-primary:hover{box-shadow:0 8px 24px rgba(11,29,58,.3);}
+
+  /* ── Footer ──────────────────────────────────────── */
+  footer{background:var(--navy);color:var(--white);text-align:center;padding:36px 24px;font-size:13px;opacity:.7;}
+  footer span{color:var(--gold);font-weight:600;}
+
+  @media(max-width:640px){
+    .hero h1{font-size:32px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="brand"><img src="vibe-icon-transparent.png" alt="VIBE"> VIBE <span>RECOGNITION</span></div>
+    <div class="nav-links">
+      <a href="#modules">Modules</a>
+      <a href="#suite">The Suite</a>
+      <a href="#why">Why VIBE</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">VIBE Business Systems</span>
+      <h1>Where appreciation becomes <em>culture</em></h1>
+      <p>VIBE helps organisations of any size build positive, connected, high-performing teams — through practical, branded systems for recognition, growth, and engagement. One platform. One login. Modules that grow with you.</p>
+      <a href="#modules" class="btn btn-primary">Explore the modules</a>
+      <a href="#contact" class="btn btn-outline">Book a walkthrough</a>
+    </div>
+  </header>
+
+  <section class="modules" id="modules">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The VIBE Suite</span>
+        <h2>One platform. Modules built for how you work.</h2>
+        <p>Start with what you need most, switch on more as you grow — all under your own branding, all in one place.</p>
+      </div>
+      <div class="module-grid">
+        <div class="module-card">
+          <div class="module-icon">⭐</div>
+          <h3>Recognition &amp; Engagement</h3>
+          <p>Acknowledge great work the moment it happens — branded, automated, and trackable.</p>
+          <ul>
+            <li>QR-based nominations</li>
+            <li>Branded certificates &amp; emails</li>
+            <li>Custom recognition categories</li>
+            <li>Full nomination history &amp; reporting</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">🌟</div>
+          <h3>Professional Growth</h3>
+          <p>Align learning, goals, and development conversations in one secure system.</p>
+          <ul>
+            <li>Goal tracking &amp; coaching notes</li>
+            <li>Learning &amp; development logs</li>
+            <li>Performance conversation support</li>
+            <li>Role-based access controls</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">📊</div>
+          <h3>Evidence &amp; Reporting</h3>
+          <p>Turn day-to-day participation into clear insight for leadership and reviews.</p>
+          <ul>
+            <li>Participation &amp; trend dashboards</li>
+            <li>Quarterly / year-to-date exports</li>
+            <li>Audit &amp; review-ready reporting</li>
+            <li>Reduced manual data entry</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">🛠</div>
+          <h3>Setup &amp; Support</h3>
+          <p>Structured onboarding so each module gets embedded into real practice — not left on a shelf.</p>
+          <ul>
+            <li>Guided setup &amp; branding import</li>
+            <li>Staff onboarding &amp; training</li>
+            <li>Documentation &amp; user guides</li>
+            <li>Ongoing review &amp; refinement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="suite" id="suite">
+    <div class="wrap">
+      <span class="eyebrow">Built as a suite, not a silo</span>
+      <h2>One login. Every module you switch on.</h2>
+      <p>Your team signs in once and sees exactly the tools your organisation has enabled — recognition today, professional growth and reporting tomorrow — all carrying your own name, logo, and colours.</p>
+      <div class="suite-pills">
+        <span class="pill">Single sign-on across modules</span>
+        <span class="pill">Your branding, automatically applied</span>
+        <span class="pill">Switch modules on as you grow</span>
+        <span class="pill">One dashboard, one source of truth</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why organisations choose VIBE</span>
+        <h2>Practical systems, not generic software</h2>
+        <p>Every VIBE module is built from real workplace practice — designed to reduce admin, not add to it.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">🔒</div>
+          <h3>Privacy &amp; Trust First</h3>
+          <p>Role-based access, secure data handling, and clear governance built into every module.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🎨</div>
+          <h3>Genuinely Yours</h3>
+          <p>Upload your name, logo, and palette once — every certificate, email, and screen reflects your brand.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚙️</div>
+          <h3>Built to Scale</h3>
+          <p>One multi-tenant platform serving many organisations, each fully separated and fully their own.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🤝</div>
+          <h3>Partnership Approach</h3>
+          <p>We work with you to understand your context, adapt the system, and support real adoption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta">
+      <img src="vibe-logo-full-transparent.png" alt="VIBE Recognition" style="height:64px;width:auto;margin:0 auto 22px;">
+      <h2>Ready to bring VIBE to your organisation?</h2>
+      <p>Tell us a little about your team and we'll show you how the suite works — starting with the module that matters most to you right now.</p>
+      <a href="mailto:hello@viberecognition.com.au" class="btn btn-primary">Book a walkthrough</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>VIBE</span> Recognition &amp; Business Systems — © 2026. Where appreciation becomes culture.
+  </footer>
+
+</body

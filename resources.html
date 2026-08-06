@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — VIBE Recognition</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1D3A;
+    --teal:#0AA6A6;
+    --light-teal:#4FD1C5;
+    --gold:#F2B233;
+    --white:#FFFFFF;
+    --light-grey:#F0F4F8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.6;background:var(--white);}
+  a{text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* ── Nav ─────────────────────────────────────────── */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.25);}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:700;font-size:18px;letter-spacing:1px;}
+  .brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:var(--white);font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;color:var(--light-teal);}
+  .nav-links .nav-cta{background:var(--gold);color:var(--navy);padding:9px 20px;border-radius:7px;font-weight:700;opacity:1;}
+  .nav-links .nav-cta:hover{background:#e6a620;color:var(--navy);}
+  .nav-links .nav-login{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:var(--white);padding:8px 18px;border-radius:7px;font-weight:600;opacity:1;font-size:13px;}
+  .nav-links .nav-login:hover{border-color:var(--light-teal);color:var(--light-teal);}
+  @media(max-width:900px){ .nav-links{display:none;} }
+
+  /* ── Header ──────────────────────────────────────── */
+  .res-hero{background:linear-gradient(135deg,var(--navy) 0%,#13284d 100%);color:var(--white);padding:64px 24px 56px;text-align:center;}
+  .res-hero .eyebrow{display:inline-block;color:var(--gold);font-size:17px;letter-spacing:4px;font-weight:700;text-transform:uppercase;margin-bottom:14px;}
+  .res-hero h1{font-size:36px;font-weight:700;margin-bottom:14px;}
+  .res-hero p{font-size:16px;max-width:600px;margin:0 auto;opacity:.85;}
+
+  /* ── Grid ────────────────────────────────────────── */
+  .res-section{padding:56px 24px 72px;background:var(--light-grey);}
+  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+  @media(max-width:860px){ .res-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:600px){ .res-grid{grid-template-columns:1fr;} }
+
+  .res-card{background:var(--white);border-radius:14px;padding:28px 24px;box-shadow:0 4px 18px rgba(11,29,58,.08);display:flex;flex-direction:column;gap:12px;}
+  .res-icon{width:44px;height:44px;border-radius:10px;background:rgba(10,166,166,.12);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:22px;}
+  .res-card h3{font-size:17px;font-weight:700;color:var(--navy);}
+  .res-card p{font-size:13.5px;color:#556;flex-grow:1;}
+  .res-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(10,166,166,.1);padding:3px 10px;border-radius:20px;width:fit-content;}
+  .res-dl{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:10px 18px;background:var(--navy);color:var(--white);border-radius:8px;font-weight:600;font-size:13.5px;transition:background .15s;}
+  .res-dl:hover{background:var(--teal);}
+
+  .res-full{grid-column:1 / -1;background:linear-gradient(135deg,var(--navy) 0%,#13284d 100%);color:var(--white);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:32px 32px;}
+  .res-full h3{color:var(--white);font-size:19px;}
+  .res-full p{color:rgba(255,255,255,.75);}
+  .res-full .res-icon{background:rgba(242,178,51,.18);color:var(--gold);}
+  .res-full .res-dl{background:var(--gold);color:var(--navy);}
+  .res-full .res-dl:hover{background:#e6a620;}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:32px 24px;font-size:13px;}
+  footer a{color:var(--light-teal);}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="brand">
+      VIBE <span>RECOGNITION</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#modules">Modules</a>
+      <a href="index.html#suite">Platform</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#why">Why VIBE</a>
+      <a href="/library">How-To Videos</a>
+      <a href="resources.html" style="opacity:1;color:var(--light-teal);">Resources</a>
+      <a href="index.html#contact" class="nav-cta">Book a Demo</a>
+      <a href="https://app.viberecognition.com.au/admin/login" target="_blank" class="nav-login">Login →</a>
+    </div>
+  </nav>
+
+  <section class="res-hero">
+    <div class="eyebrow">Resources</div>
+    <h1>Everything you need to evaluate VIBE</h1>
+    <p>Download a one-page overview for leadership, dig into a specific module, or grab the full pricing breakdown — all free, no form required.</p>
+  </section>
+
+  <section class="res-section">
+    <div class="res-grid">
+
+      <div class="res-card res-full">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div class="res-icon">📋</div>
+          <div>
+            <h3>Platform Overview — one-page pamphlet</h3>
+            <p>All 5 modules + pricing on a single printable page. The best starting point to share with your leadership team.</p>
+          </div>
+        </div>
+        <a class="res-dl" href="VIBE_Overview_Pamphlet.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">⭐</div>
+        <span class="res-tag">Module</span>
+        <h3>Recognition</h3>
+        <p>QR nominations, branded certificates, the Recognition Wall, analytics and approval workflows — the full feature breakdown.</p>
+        <a class="res-dl" href="VIBE_Module_Recognition.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">🦺</div>
+        <span class="res-tag">Module</span>
+        <h3>WHS &amp; Incident Reporting</h3>
+        <p>No-login staff reporting, the notifiable-incident helper, tiered access and 5-year retention — everything WHS covers.</p>
+        <a class="res-dl" href="VIBE_Module_WHS_and_Incident_Reporting.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">🗓️</div>
+        <span class="res-tag">Module</span>
+        <h3>Staff Scheduler</h3>
+        <p>One live schedule for your whole team — drag-and-drop rostering, day overrides, coverage gaps and print-ready PDFs. School Edition available for EA timetabling.</p>
+        <a class="res-dl" href="VIBE_Module_Staff_Scheduler.pdf" download>↓ Download PDF</a>
+        <a class="res-dl" href="VIBE_Module_Staff_Scheduler_School_Edition.pdf" download style="margin-top:8px;">↓ For schools — School Edition PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">📅</div>
+        <span class="res-tag">Module</span>
+        <h3>PL Event Booking</h3>
+        <p>Session booking, QR check-in, lunch ordering and automated attendance certificates, in one branded portal.</p>
+        <a class="res-dl" href="VIBE_Module_PL_Event_Booking.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">💬</div>
+        <span class="res-tag">Module</span>
+        <h3>VIBE Pulse — Wellbeing</h3>
+        <p>Genuinely anonymous pulse surveys, trend reporting and a "what we heard" share-back that closes the loop with staff.</p>
+        <a class="res-dl" href="VIBE_Module_VIBE_Pulse_Wellbeing.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">💰</div>
+        <span class="res-tag">Pricing</span>
+        <h3>Pricing Structure</h3>
+        <p>The full banded pricing table, bundle discounts, payment options and what's included with every module.</p>
+        <a class="res-dl" href="VIBE_Pricing_Structure.pdf" download>↓ Download PDF</a>
+      </div>
+
+      <div class="res-card">
+        <div class="res-icon">🔍</div>
+        <span class="res-tag">Online</span>
+        <h3>Full comparison &amp; feature breakdown</h3>
+        <p>Prefer to browse instead of download? See the complete module walkthrough and competitor comparison online.</p>
+        <a class="res-dl" href="infographic.html" target="_blank">View online →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    VIBE RECOGNITION — Valuing Individuals, Building Engagement<br>
+    <a href="index.html">← Back to homepage</a>
+  </footer>
+
+</body>
+</html>

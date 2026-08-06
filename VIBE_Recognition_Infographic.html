@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIBE Recognition — Platform Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:  #0AA6A6;
+    --gold:  #F2B233;
+    --navy:  #0B1D3A;
+    --white: #FFFFFF;
+    --light: #E8F4F4;
+    --grey:  #64748B;
+    --ink:   #1B2430;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #EEF2F5;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px 64px;
+  }
+  .page {
+    width: 860px;
+    background: white;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal)); }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, #142A52 100%);
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+  }
+  .header-logo img {
+    height: 90px;
+    width: auto;
+    display: block;
+  }
+  .header-right { text-align: right; }
+  .header-headline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+  }
+  .header-headline span { color: var(--gold); }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(176,216,216,0.85);
+    margin-top: 6px;
+    line-height: 1.5;
+    max-width: 360px;
+  }
+  .header-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    justify-content: flex-end;
+  }
+  .pill {
+    background: rgba(10,166,166,0.2);
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 11px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .pill.gold {
+    background: rgba(242,178,51,0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar { background: var(--teal); display: flex; }
+  .stat {
+    flex: 1;
+    text-align: center;
+    padding: 20px 12px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 40px 48px; }
+  .section.alt { background: var(--light); }
+  .section.dark { background: var(--navy); }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+  .sec-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+  .sec-dot.gold { background: var(--gold); }
+  .sec-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sec-title.white { color: white; }
+  .sec-sub {
+    font-size: 12px;
+    color: var(--grey);
+    margin-top: 1px;
+  }
+  .sec-sub.light { color: rgba(176,216,216,0.75); }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 56px;
+    right: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+    z-index: 0;
+  }
+  .step { flex: 1; text-align: center; padding: 0 14px; position: relative; z-index: 1; }
+  .step-circle {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+    font-size: 26px;
+    position: relative;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+  }
+  .step:nth-child(1) .step-circle { background: var(--teal); }
+  .step:nth-child(2) .step-circle { background: var(--gold); }
+  .step:nth-child(3) .step-circle { background: var(--navy); border: 2px solid var(--teal); }
+  .step-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+  }
+  .step-desc { font-size: 11.5px; color: var(--grey); line-height: 1.55; }
+
+  /* ── FEATURES ── */
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .feat {
+    background: white;
+    border-radius: 8px;
+    padding: 14px 14px 12px;
+    border-left: 3px solid var(--teal);
+    box-shadow: 0 1px 6px rgba(10,166,166,0.07);
+  }
+  .feat.g { border-left-color: var(--gold); }
+  .feat.n { border-left-color: var(--navy); }
+  .feat-icon { font-size: 19px; margin-bottom: 6px; }
+  .feat-title { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .feat-desc { font-size: 10.5px; color: var(--grey); line-height: 1.45; }
+
+  /* ── WHY VIBE ── */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .diff {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 16px 15px;
+    border-top: 3px solid var(--gold);
+  }
+  .diff-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .diff-title { font-size: 12.5px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .diff-desc { font-size: 11px; color: rgba(176,216,216,0.8); line-height: 1.5; }
+
+  /* ── COMPARE ── */
+  .compare { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .compare th {
+    padding: 9px 12px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .compare th:first-child { text-align: left; }
+  .th-vibe { background: var(--teal); color: white; }
+  .th-comp { background: #E2E8F0; color: var(--grey); }
+  .th-feat { background: transparent; color: var(--navy); }
+  .compare td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #EDF1F7;
+    text-align: center;
+    color: var(--grey);
+    font-size: 11.5px;
+  }
+  .compare td:first-child { text-align: left; font-weight: 600; color: var(--navy); font-size: 11.5px; }
+  .compare tr:nth-child(even) td { background: rgba(232,244,244,0.35); }
+  .compare .yes { color: var(--teal); font-weight: 800; font-size: 14px; }
+  .compare .no  { color: #CBD5E0; font-size: 14px; }
+  .compare .vibe { background: rgba(10,166,166,0.09); color: var(--teal); font-weight: 800; font-size: 13px; }
+
+  /* ── AUDIENCE ── */
+  .aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .aud {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 12px 16px;
+    box-shadow: 0 2px 10px rgba(11,29,58,0.07);
+    border-top: 3px solid var(--teal);
+    text-align: center;
+  }
+  .aud:nth-child(2) { border-top-color: var(--gold); }
+  .aud:nth-child(3) { border-top-color: var(--navy); }
+  .aud-emoji { font-size: 30px; margin-bottom: 10px; }
+  .aud-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .aud ul { list-style: none; text-align: left; }
+  .aud li {
+    font-size: 10.5px;
+    color: var(--grey);
+    padding: 2px 0 2px 13px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .aud li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--teal);
+    font-size: 8px; top: 5px;
+  }
+  .aud:nth-child(2) li::before { color: var(--gold); }
+
+  /* ── HIGHLIGHT ── */
+  .highlight {
+    background: var(--gold);
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hl-icon { font-size: 24px; }
+  .hl-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .hl-text span { font-weight: 400; font-size: 12px; display: block; margin-top: 2px; color: rgba(11,29,58,0.7); }
+
+  /* ── FOOTER CTA ── */
+  .cta {
+    background: var(--navy);
+    padding: 40px 48px;
+    text-align: center;
+    position: relative;
+  }
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+  }
+  .cta-logo {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+  }
+  .cta-logo-inner {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+  }
+  .cta-logo img {
+    height: 70px;
+    width: auto;
+  }
+  .cta-headline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .cta-sub {
+    font-size: 13px;
+    color: rgba(176,216,216,0.85);
+    margin-bottom: 26px;
+  }
+  .cta-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .cta-box {
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 170px;
+  }
+  .cta-box .lbl { font-size: 10px; font-weight: 400; opacity: 0.8; margin-top: 3px; }
+  .cb-primary   { background: var(--teal); color: white; }
+  .cb-secondary { background: var(--gold); color: var(--navy); }
+  .cb-tertiary  { background: rgba(255,255,255,0.07); color: white; border: 1px solid rgba(255,255,255,0.2); }
+  .cta-contact { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+  .cta-url { font-size: 10.5px; color: rgba(155,192,192,0.65); }
+
+  .footer-strip {
+    background: var(--teal);
+    text-align: center;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── PRICING ── */
+  .price-tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .price-tbl th { padding: 9px 10px; font-weight: 700; font-size: 10px; letter-spacing: 0.4px; text-transform: uppercase; text-align: center; background: var(--navy); color: white; }
+  .price-tbl th:first-child { text-align: left; }
+  .price-tbl th.hi { background: var(--teal); }
+  .price-tbl th small { display: block; font-weight: 500; font-size: 9px; opacity: 0.8; margin-top: 2px; text-transform: none; letter-spacing: 0; }
+  .price-tbl td { padding: 9px 10px; border-bottom: 1px solid #EDF1F7; text-align: center; font-weight: 700; color: var(--navy); font-size: 12.5px; }
+  .price-tbl td:first-child { text-align: left; }
+  .price-tbl td.contact { color: var(--grey); font-weight: 600; font-size: 11px; }
+  .price-tbl tr:nth-child(even) td { background: rgba(232,244,244,0.35); }
+  .price-note-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .price-chip { flex: 1; min-width: 150px; background: white; border-radius: 8px; padding: 12px 14px; border-left: 3px solid var(--gold); box-shadow: 0 1px 6px rgba(10,166,166,0.07); }
+  .price-chip .pc-t { font-size: 11.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .price-chip .pc-d { font-size: 10.5px; color: var(--grey); line-height: 1.45; }
+  .price-fine { font-size: 10px; color: var(--grey); margin-top: 12px; line-height: 1.5; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logo">
+      <img src="data:image/png;base64,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" alt="VIBE Recognition">
+    </div>
+    <div class="header-right">
+      <div class="header-headline">One Platform:<br><span>Recognition, Safety &amp; Wellbeing.</span></div>
+      <p class="header-sub">Staff recognition, WHS incidents, wellbeing pulse and PL events — one login, fully white-label, no per-user fees.</p>
+      <div class="header-pills">
+        <span class="pill">Four Modules</span>
+        <span class="pill">Flat Licence · No Per-User</span>
+        <span class="pill">White-Label</span>
+        <span class="pill gold">Australian-Built</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">23%</div>
+      <div class="stat-label">of employees globally<br>are engaged at work</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$8.8T</div>
+      <div class="stat-label">lost each year to disengaged<br>and disconnected employees</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">&lt;60s</div>
+      <div class="stat-label">nomination to<br>certificate in inbox</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">your branding — not ours<br>on every certificate & screen</div>
+    </div>
+  </div>
+  <div style="background:#EEF2F5;padding:6px 48px;text-align:center;font-size:9.5px;color:var(--grey);">Engagement figures: Gallup, State of the Global Workplace, 2023.</div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section alt">
+    <div class="sec-head">
+      <div class="sec-dot"></div>
+      <div>
+        <div class="sec-title">How It Works</div>
+        <div class="sec-sub">Fully automated — your team just hits submit</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle">📱</div>
+        <div class="step-label">Scan or Visit</div>
+        <p class="step-desc">Staff scan a QR code or visit the URL. No account. No app. Works on every device.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">✍️</div>
+        <div class="step-label">Nominate</div>
+        <p class="step-desc">Fill a short form: who, why, which award category. Simple. Human. Meaningful.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">🏆</div>
+        <div class="step-label">Delivered</div>
+        <p class="step-desc">A branded PDF certificate is generated and emailed to the nominee. Automatically. Every time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-dot gold"></div>
+      <div>
+        <div class="sec-title">The Platform &amp; Modules</div>
+        <div class="sec-sub">Four modules, one login, your branding — switch on what your organisation needs</div>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">📄</div>
+        <div class="feat-title">Auto PDF Certificates</div>
+        <div class="feat-desc">Branded, personalised, emailed instantly per nomination.</div>
+      </div>
+      <div class="feat g">
+        <div class="feat-icon">📷</div>
+        <div class="feat-title">QR Code Entry</div>
+        <div class="feat-desc">Submit in 30 seconds. No login. Works on every phone.</div>
+      </div>
+      <div class="feat n">
+        <div class="feat-icon">🎨</div>
+        <div class="feat-title">True White-Label</div>
+        <div class="feat-desc">Logo, colours, award categories — each client's own brand.</div>
+      </div>
+      <div class="feat g">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Analytics Dashboard</div>
+        <div class="feat-desc">Leaderboards, department trends, theme insights — PDF export.</div>
+      </div>
+      <div class="feat n">
+        <div class="feat-icon">🏢</div>
+        <div class="feat-title">Multi-Location Groups</div>
+        <div class="feat-desc">Combined analytics across all sites in one group view.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📚</div>
+        <div class="feat-title">PL Event Booking</div>
+        <div class="feat-desc">Events, sessions, lunch orders, QR attendance, certificates.</div>
+      </div>
+      <div class="feat g">
+        <div class="feat-icon">✅</div>
+        <div class="feat-title">Approval Workflow</div>
+        <div class="feat-desc">Optional manager approval before certificates are issued.</div>
+      </div>
+      <div class="feat n">
+        <div class="feat-icon">🌟</div>
+        <div class="feat-title">Recognition Wall</div>
+        <div class="feat-desc">Public-facing winners feed, passcode-protected per business.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎁</div>
+        <div class="feat-title">Prize Draw System</div>
+        <div class="feat-desc">Built-in monthly draw from eligible nominees, automated email.</div>
+      </div>
+      <div class="feat g">
+        <div class="feat-icon">🦺</div>
+        <div class="feat-title">WHS &amp; Incident Reporting</div>
+        <div class="feat-desc">No-login staff reporting, registers, notifiable-incident helper, board-ready PDFs.</div>
+      </div>
+      <div class="feat n">
+        <div class="feat-icon">💬</div>
+        <div class="feat-title">VIBE Pulse — Wellbeing</div>
+        <div class="feat-desc">Anonymous wellbeing pulse, trends over time, and "what we heard" share-back.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🛡️</div>
+        <div class="feat-title">Psychosocial Reporting</div>
+        <div class="feat-desc">Anonymous psychosocial intake with tiered access — meets new AU codes of practice.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY VIBE WINS -->
+  <div class="section dark">
+    <div class="sec-head">
+      <div class="sec-dot"></div>
+      <div>
+        <div class="sec-title white">Why VIBE Wins</div>
+        <div class="sec-sub light">What no other platform in the market offers</div>
+      </div>
+    </div>
+    <div class="diff-grid">
+      <div class="diff">
+        <div class="diff-num">01</div>
+        <div class="diff-title">Tangible Certificates</div>
+        <div class="diff-desc">A branded PDF in the inbox beats a badge on a dashboard. Memorable, printable, shareable.</div>
+      </div>
+      <div class="diff">
+        <div class="diff-num">02</div>
+        <div class="diff-title">Zero Friction</div>
+        <div class="diff-desc">QR code → form → done. No account, no app, no barriers. 30-second experience.</div>
+      </div>
+      <div class="diff">
+        <div class="diff-num">03</div>
+        <div class="diff-title">True White-Label</div>
+        <div class="diff-desc">Every business looks like they built it. Not just a logo swap — full brand control.</div>
+      </div>
+      <div class="diff">
+        <div class="diff-num">04</div>
+        <div class="diff-title">License Pricing</div>
+        <div class="diff-desc">Flat fee — not per user. Clients aren't penalised for recognising more people.</div>
+      </div>
+      <div class="diff">
+        <div class="diff-num">05</div>
+        <div class="diff-title">One Platform, Four Modules</div>
+        <div class="diff-desc">No competitor combines recognition, WHS incidents, wellbeing pulse and PL events in one login.</div>
+      </div>
+      <div class="diff">
+        <div class="diff-num">06</div>
+        <div class="diff-title">Australian-Built</div>
+        <div class="diff-desc">Local support, AUD pricing, built for Australian workplace culture.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITOR TABLE -->
+  <div class="section alt">
+    <div class="sec-head">
+      <div class="sec-dot"></div>
+      <div>
+        <div class="sec-title">How VIBE Stacks Up</div>
+        <div class="sec-sub">A general feature comparison against other recognition platforms</div>
+      </div>
+    </div>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th class="th-feat">Feature</th>
+          <th class="th-vibe">VIBE Recognition</th>
+          <th class="th-comp">Culture Amp</th>
+          <th class="th-comp">Bonusly</th>
+          <th class="th-comp">Kudos</th>
+          <th class="th-comp">Achievers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>PDF Certificates</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td>QR Code Entry</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td>True White-Label</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td style="color:#888;font-size:11px;font-weight:600;">Limited</td></tr>
+        <tr><td>Flat License Pricing</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td>PL Event Booking</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td>Multi-Location Groups</td><td class="vibe yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Analytics Built-In</td><td class="vibe yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>No App Required</td><td class="vibe yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:9.5px;color:var(--grey);margin-top:8px;">As of July 2026, based on each provider's public feature pages — not independently verified, and subject to change.</div>
+  </div>
+
+  <!-- WHO SHOULD BUY -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-dot gold"></div>
+      <div>
+        <div class="sec-title">Who Should Buy This?</div>
+        <div class="sec-sub">Any business with 20+ staff that wants recognition to actually mean something</div>
+      </div>
+    </div>
+    <div class="aud-grid">
+      <div class="aud">
+        <div class="aud-emoji">🏫</div>
+        <div class="aud-title">Schools &amp; Education</div>
+        <ul>
+          <li>20–500 staff per site</li>
+          <li>WHS &amp; psychosocial reporting</li>
+          <li>Staff wellbeing pulse surveys</li>
+          <li>PL events &amp; multi-campus groups</li>
+        </ul>
+      </div>
+      <div class="aud">
+        <div class="aud-emoji">🏥</div>
+        <div class="aud-title">Healthcare</div>
+        <ul>
+          <li>Frontline workers overlooked</li>
+          <li>Recognition drives retention</li>
+          <li>Awards by ward / department</li>
+          <li>Multi-site hospitals &amp; clinics</li>
+        </ul>
+      </div>
+      <div class="aud">
+        <div class="aud-emoji">🍽️</div>
+        <div class="aud-title">Hospitality &amp; Retail</div>
+        <ul>
+          <li>High turnover — culture critical</li>
+          <li>QR fits the fast-paced floor</li>
+          <li>Prize draws drive engagement</li>
+          <li>Franchise group management</li>
+        </ul>
+      </div>
+      <div class="aud">
+        <div class="aud-emoji">🏢</div>
+        <div class="aud-title">Corporate Multi-Site</div>
+        <ul>
+          <li>Consistent culture across offices</li>
+          <li>Group analytics for HR reports</li>
+          <li>Approval workflow &amp; audit log</li>
+          <li>Custom categories per location</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section alt">
+    <div class="sec-head">
+      <div class="sec-dot gold"></div>
+      <div>
+        <div class="sec-title">Simple, Transparent Pricing</div>
+        <div class="sec-sub">One flat annual licence per module — priced by your size, never per user</div>
+      </div>
+    </div>
+    <table class="price-tbl">
+      <thead>
+        <tr>
+          <th>Module <small>Annual · AUD · ex GST</small></th>
+          <th>1–30 staff</th>
+          <th>31–100</th>
+          <th class="hi">101–250</th>
+          <th>251+ / multi-site</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>⭐ Recognition</td><td>$1,800</td><td>$3,150</td><td>$4,500</td><td class="contact">Contact us</td></tr>
+        <tr><td>🦺 WHS &amp; Incident Reporting</td><td>$2,600</td><td>$4,550</td><td>$6,500</td><td class="contact">Contact us</td></tr>
+        <tr><td>📅 PL Event Booking</td><td>$1,600</td><td>$2,800</td><td>$4,000</td><td class="contact">Contact us</td></tr>
+        <tr><td>💬 VIBE Pulse — Wellbeing</td><td>$800</td><td>$1,400</td><td>$2,000</td><td class="contact">Contact us</td></tr>
+      </tbody>
+    </table>
+    <div class="price-note-row">
+      <div class="price-chip">
+        <div class="pc-t">🎁 Bundle &amp; save</div>
+        <div class="pc-d">Any two modules 10% off · any three 15% · all four 20%.</div>
+      </div>
+      <div class="price-chip">
+        <div class="pc-t">💳 Flexible payments</div>
+        <div class="pc-d">Annual upfront best price · quarterly +5% · monthly +10% · 12-month term.</div>
+      </div>
+      <div class="price-chip">
+        <div class="pc-t">🎓 Schools &amp; NFPs</div>
+        <div class="pc-d">Tailored pricing for schools, multi-site groups and not-for-profits — just ask.</div>
+      </div>
+    </div>
+    <div class="price-fine">Recognition includes its own analytics and reporting — you never pay to see your own data. Pricing is based on your total active workforce at the start of each 12-month term. All prices AUD and exclude GST.</div>
+  </div>
+
+  <!-- HIGHLIGHT BAND -->
+  <div class="highlight">
+    <div class="hl-icon">⚡</div>
+    <div class="hl-text">
+      Fully automated — your team just hits submit.
+      <span>No admin workload. No IT involvement. No ongoing maintenance required.</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-logo"><div class="cta-logo-inner">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA58AAAEYCAYAAADbO0I1AAAWV0lEQVR42u3dy3LsuJVAUf7/T8OzHrV9lSQOcB6LEWtkl4oCASS2MqV61loPAAAARDIIAAAAiE8AAADEJwAAAIhPAAAAxCcAAADiEwAAAMQnAAAA4hMAAADEJwAAAOITAAAA8QkAAADiEwAAAPEJAACA+AQAAADxCQAAgPgEAAAA8QkAAID4BAAAQHwCnLKMAQCA+AQQnwAAiE9AfAIAID4B/hWe4hMAQHwCHIlPAQoAID4BxCcAAOITEJ8AAIhPAPEJACA+Ae6HpwAFABCfAOITAADxCfQIT/EJACA+AY7EpwAFABCfAOITAADxCdQPTwEKACA+AY6Ep/gEABCfAEfiU4ACAIhPgPDwFJ8AAOIT4Eh8ClAAAPEJEB6eAhQAQHwCHAlPAQoAID4BjoSn+AQAEJ8A4eEpQAEAxCfAkfAUoAAA4hPgSHgKUAAA8Qm8iDLhKUIBAMQncC3AhKcABQAQn4DfcUwQnQIUAEB8gugcFFiZLvMRAEB8guhsFliZL/MTAEB8gugsHleVLvMVAEB8gvAsFleVL/Oyx5id/h4zjKd11ndf8gMyQHwCPmLa5FA36cAnPsXn1HVmLwIQn+BgX/QAM/EyT2uMy41nLz7zzyVjAyA+wYG+wSFGdJqr0+NafOafT8YEQHyCw7yP4DrgiU/xKT7D55WxABCf4CDf+DBjLHz0dkpYi0+/KmCPAhCfILASHGgc6Lz72T2qxWf+dWoMAMQnOMAPOtQ4yIlP8Sk+b80v+zSA+ASH94GHGgc4H73tFtTiM//6tU8DiE9wcBegDm/is/z3Iz7Fp/0LQHyC8BSgDm5DPnorPgWo+AQQn+DQ7nBzbSzN1xnvfi7xOeoSnwDiExzWHW5Sjan5Kj5PfR/iU3yKTwDxCeJTPDDgo7fiU3yKTwDxCQ7qDjjHx9dcnRX+S3yOi88lPgHEJzikC9AMY2yuis/K76o97qHtDwgAEJ8gPpMdrBwKffRWfPaIK/EJgPgE4Zn+YOVA6N3PSvftHvL/QTHxCSA+4cjBVHz2f/fTfBef4jPv8xOfAIhPxhykxWf/dz/N+5kBKj7rxJX4BEB8MuLwLD7rHq4cBMVnhfsVn+ITAPGJQ7P4FJ+IT/EpPsUngPiEOnEiPnM+Y2tgboCKT/EpPgHEJ7T8fUDxKT6tqzzzKNt9ik/xCYD4xOFYfDY5XDkAik/xKT7FJ4D4hPSHYvEpPukVoOJTfIpPAPEJKQ8t4lN80ic+M96f+Mx/f+ITQHzCkcOC+OxxuHL4E5/is2ZcLfEJgPjE4Vd8ik+qBaj4rBVXS3wCID6ZcOAVn+KTXvE54b46xWemvUl8AohPOBJ24lN8IvLE55lxyboviU8A8QllQkp45pkr1o2Pv3f+aKk9ql4UT9qHAcQnDraFP0Lm0PP7M7B+ZsbnEp+j96dHfAKIT6hwABCf4pP67zSKz7n70yM+AcQnVHnhF599DjwOZXPf/cw8z8Wn/Vt8AohPhGfqdzgceBCf9d/1FJ819iJ7MYD4xMFVfDrw4KO34lN8hu9BxgFAfOKwKj4ddvDuZ+mP3IrPGvuP8QAQnzik+viWww7is/S7nuJz3jOyHwOIT4Sn+HTQoWFciU/7kvgEEJ9Q5gXdT9HzH3Qcyrz7WfUjt+Kzxv5kTwYQnziMln4Rd7C7O37WYf/4nLgXiM+YZ2dfBhCfOISKz4EHHAc0a198is/Tz8/eDCA+EZ7lX8SF5/3xsjb7vvs5cR8Qn8bHvgaITxw6RZYoTzxG1mm/+Jz6QyjxGTNG9mcA8YnobPMibkzuj4s12+ujt1N/ANXh4+zd49NeACA+EZ2jQkuMOxR2f/dTfPaIqyxr3T4DID4Rnj5eKjwdCr37Wfojt+Kzxh+Pss8AiE9EZ8sgmToOflfKXpExPh/xmWbMbq51ewyA+ER0to0R0Sk+7Rnvn5f47PvOnvgEQHw6QIrPpuM8dQ5Z43UDYolP8Rlwr/YXAPGJ8BwRIt7tFJ/2kDvx+YhP8Sk+AcQnwnNiiIhO8Wkf+ffzEp/iU3wCiE8cGsVno7/82H3eWOs1g2uJT/EpPgHEJw6M4jPXMzFfHA7FZ545ID7FJwDiE/HpoDB0rnh+Nd+9F5/iU3wCiE8cGIWIOeKZU2quiE/xKT4BxCcOi0LE3PDMzZlWz198ik8AxCfi00Fh6JzwXMWn+Mw3fkt8AiA+HRbFp7ngmdNpHonPfOO3xCcA4tNBUXyaB545nebSIz7TjeESnwCITwdF8en5e+Z0m1fi8/4YZnze9hcA8Yn4ECKeu2dufpV/7t3is+M6t6cBiE9EiBdtz9szN8/Ep/gUn/Y0QHyS4SAjRrxoe9aeufkmPq138QkgPgk/wAgSL9qesWdu3uV+5uIz//O2pwGIT/7wwihMvGh7tp65+Sc+rX/xCSA+CT+0CBQv2p6pZ24uik/7wLcxsqcBiE+HNPHpRdvz9MzNx/LPW3zmf9b2NADx6XAmPr1oe46euXkpPsWV8bGnAeKTDAcU0eJFW3Q6qJmj4tPeMHvvtLcA4pMjL3rixYu26HRQM1dzP2vxmf8529MAxKdDmPj0ou2Zeeb2PfEpPsOfr3EAEJ8OX+LTi7Zn5ZnbA8Wn+Ax/tsYCQHw6dIlPL9qekWduHyz/nMVn/udqTADEp8OW+PSiLTod1OyH4lN82l/taYD4JMMLmhfgGS/aLgc1e2PdZyw+8z9DexqA+HSwEp/jX7RdDmoAAOKTln9MQ4iITs8cAADxKTrFp4/nucQnAID4FJ3iU4gYe88cAADx2TAWBFD9EHGJTwAAxGf6YBBCdUPEJT4BABCfZYJBENULEZf4BABAfJYLBmFUJ0Rc4hMAAPFZNhgEUo0QcYlPAADEZ+lgEEn5Q8QlPgHevFa4F0B8ik7xKUSMq2cOcOQ1YvK9AOJTdIpPIWJ8PXMA8QkgPqcFgbGoFyIu8QkgPgEGxqdDtDAy9zxzYuen8YTY4Nu59qxlQHw6+IvPxiHiEp9T9kjjCuITYFx8OkQLoYwvpi7xOWWfNL7wtzX3XIjPx7oFxKcDvviccxB2ic8J89AYQ/x6NTaA+HSgF59CxHPwzO2ZxhjEJ0DH+HSINlZVD8Au0VP5MOtZgPgEEJ8O0WLHO6GeMf6ACVivAOLToV18ihXPR3z2Osx6HiA+AVrHp0O0MfvXuFWMFpf4rHqYjX4e2Z55pvvJuiaq/9BPfPaaj35QBuLTAf3CRjhpvCrHi0t8is98c6DDXp5x79o5n6JeH06uuei9sNNazfq8AfHpED3wLwN3iBiXQ8PE+Mw2DzLdT9dP1pyKz1vj1jU+b8/HrM8baBSfDtHG769j1ClmXA4LE+Iz23zofj8Z96bI+Lw5bh3jM8N8zPq8AfHpEN1sDE9/n+a+dSM+Y79mtjmR6X6yrpnI+9kdn1mfYcX4zDS2XldAfDp8i8/WL0rWgfgUn/u/5tvnm2HvyHQ/J+5lx+/QRa7vdfDexGettXpjnQDi0yG66FhWf+fCMxSf4jP+r2Nm+jqnPsFx6y+QnrqvqPg8PWYR92Gt5n3eQIP4dIieO56Zv0drQ3yKz7hYuPGfUsh0P6d/IHfzP6VxKj6zjVml+Mw4H7M+b0B8OkQXHNMq3581Ij7F57uvGfUcu9/Pc+kHBdGH84zxuWtedI7PbvPR6wuIT4foYWNb9XuzVsTnxPhcyQ6zX772jR+E3TgAZ3o3dndMnA7jKfE5bT56fQHx6SA9YGy7fG/WjPicEJ+R71Ld+j4zxXC2sbl9X7fvT3zOmo9eX0B8Okg3H9+O35d1Iz4n76kZDne//Dsyzanbnwy5/XHESvG5BsRn1vmY+XkDhePTRwh7j7Ootn7EZ7958TSKzy5/jbjCu7His1Z8Zpj34hPEp8Nz8cO0d3T7BZH1wsk58YhP8dkwPm8GpPis97wB8ekwXexg6o8pWUfis9Z8qDQnxaf4FJ/iU3yC+BSfRQ5AE+/fWFgr4vPMAVh8is+sfxBJfIpPrzEgPh2oEz8Hc2fOO9rWSu+/dhsx1uJTfIpP8Sk+QXyKT4fqV8/G3PFRZOtkXnx651N8ik/xKT6BNvHpsulNmj/GxBrJHDe7x1x8ik+/8yk+xSeIT/HgYC0+Bag1Ij6vxefTPPjEp/gUn+ITxKd4cLgWn2Oer/XB7oP9Ep/iU3yKT/EJiE8HbAdsz1d8kvEgXCU+V9N7WRsjZInPkfG5Ejxz8Qni0yHZIdv8EaDWxcD4zBagO+Oq47uMGePu2bC+xWe9dxg7/oEpQHw6aDtge77ik02Hql3jn+3gGDWvsr3LGBF3S3yOjM+s81F8gvh0SHbgNncSPVtrwdrIHJ/r0mF2Qnx+/brr0r2Jz57xuZKNjfgE8ely6DZ3jI11kPAP2mQN0Mi4qv4u4661sy7cm/i8G59Z56P4BPHpkOzwbe6IT/N/QHyeCtBV9Ot0/J5u3Jf4PBd9nea1+ATx6ZDsEG7uJHqe5r21USk+/9vXjZoXme4n29jsiMbI9T0tPt+M1al7ublWxSeIT4dkB3FzR3ya883i81aAnpgTme4n63qJvCfx+X2sM93L6bUhPkF8OiQ7kJs7iZ6juS4+s8Xnk3A+dL+fjHvJIz7Tx2em+Sg+QXyKCAdz80Z8muOD4vPGHyKpuF6yrd1s+230H8WpHp87fz+201oVnyA+RYTDuXkjPs3vYfH5HD5Y3poD1e9lJdx3T/1F1g7xuesvA2d6Vz5zIHqNAfHpckg3b4yN+BTMKZ55pvvJuh6+3Jf1ba0C4lNIOKiLT/FpTgMl350HQHw6LDuwmzPi01wGxCeA+BQSIlR8ik9zGPCxTQAGxacAdXg3X+L/SIOxAd7sH971BEB8ukYf4j0bYwPU+0istQ0gPgWFCBWf4tN8Ba79SoCxBxCfgkKAmivi01wF8fl5/VnXAOJTVLjKHgA8B2MD1AhQ6xpAfAoLV+mDgPE3NsC9/VV4AiA+XWMO+cbe2AA59tid/ywA4lNciFDzQ3yaiyBArWkAesanAHXoF5/GxkEV+u21xhVAfApQV6kDg3EWn0C9PddYAohPAeoqd3gwvrPGxoYOtfdeYwcgPgWoq+xBwtiKTyD3PmyMAMSnAHW1iAJjOmdsbOYAAOJTeLiuBYKxFJ8AAIhP8SFAPX/xKTwBAMSnCHXVDwbj139sbOIAAOJTgLqux4Nx6z02NnAAAPEpQl0pIsKY9R0bmzcAgPgUoa40QWGseo6NjRsAQHwKUFequDBGvcbGhg0AID5FqCtlaBifPmNjnwIAEJ8i1JU2OoxL/bGxLwEAiE8B6kofIMak7tjYiwAAxKcIdZUJEmNRb2zsPfP22Mi92zjvfTaRvxqRbR5VmOvVzlK7x+TUPAXEpwgVoeKz4by235w/AN4MOfGZN1LEZ5/nenv/FZ+1nhfOCeJTgLo+bLzis8bY2GPyvrBEPiPxKT7FZ67zi/gUnzgjiE8R6vqwAYvP3GNjT8n97ucqGp9e/Gc9G/H57d99a1+OjE97AIhPAeq6EjLiM+88tpfkf3ERn+LTmPWPz0d8misgPkWoa0/QiM9889feUefdz1/fMfn/vvZffji0I5DffN2oj/RHfMw5y73/r/t4M/duzbFf/7/R9xG5X35Z7zvG7+063zlPd6+jqPW/a9+4vbftGp+TX+fNmEas5ah7XR/Og+JThLp+WCjiM8+8tVfUis8dnyrIGp8nPs4fFZ+37/1LoLwNtog5tnvsv9zHqb2+UnxGzNNd6yhy/X/dNzLsbbvG59S9rE1jemLsV9DzF58C1LUxdsTn/Tlrf6j50ZpfXqj+MrcyxueO6H77vX8NoFv3/r/Gex18Vl/n2PPie4uc6+vDD4oiP3Z7Iz6j5umOdRS9/nfF5+39Ydd6OXkvX/73nXMu4l7/up8cPbc5jIlQl/gUnt79fBOfOw5DN+Lz7fjs+t6j/npn9L2/jc8V8KxOx+eNuX4iPlfgWvwanzvn6Y51FL3+d8Rnhv1hBYfylznwHN6Dno37VOTrg/gUoS5X6fi0B9SOz13vxnSLz53f++nDxa573x1R0eP8ZS5lmOs74/PLx/FOxeepefpmHZ1Y/28/vplhf9j97G7fy66g2zUnT9yr+BSgLle5+LTue3z0dvdhNFt87v66J+Pz9r2/PUC9CZAnSXyemOsrwVkkU3w+l35Icmo+RMXnzf0h+tlF3cuu32U/sbdH/m62+BShLlep+LTO+7z7ufsno1PjM/qv3d669zcR9fZjvM/hw9SX2Nj5B4du/KApy8duT83T2/Ph1L5xcn+IfnZfflf7zVkmKj5v3qv4FKAuV4v4tL7Fp/gUnzv/mWnxmeE/tRJ5qBWf4lN8ik/xKUJd4lN08upFTHyKz/XD4erNDzMmxufOv5Za+T+1Ij7F5417ifg4bdRHhKM+Hi8+RajLlTY+rd++737+5TmLT/G5XhzYxef7ubDEp/gUn+JTfCJAXdPi05rt/+7nL/G5Nhye/3X42P1RwV0HtBUYDtnv/df58eaHGRFz7M1cOjnXT/y128h582bO3JinO+JzBf/g4GZ87vr4aKe/dnvyY7cn/9iT+HT4c7lSx6d1Ois+dxys1oYDebb43Pm9n47PXff+6z//Nq52z7EVeDB8O9cjPmkQ9Tuf62AIRs7TE5H29fXzRnzuHvcT6/brXrVrrpz4od6J1wfxKUJdrhTxaV3O3Hd+/Wfefs23h49/ff1TAbc2jWele/81RFaCcd4xl6Lm+q8H+TfzKjIovsyZG/N0Z3xGrP8s8fl13Hetl5P3kiE+o+/1y+uu+BSgLlfoXLMW/eXbXT+82BGfv379ky/Qb7/32z/Zfnvvp+Jz5zjv+p5vzfUTa/XGnMn273wbaTvX//PyWWXa27Ks22fTvD8Rn6fu9e14iU8R6nKFxae1Z7/Z/QOMry+Yb75+dMDt+N5vxefXe9910LoxzjvmatRc/+s+v3udrgPj9/Z7WRf+nc+h+ZA1Pnd9b7vG5+TXuR2fJ+717bMTnwLU5QqJT2sO4n6fFm79kAjrv/P3Zk0UZRBEqGtufFpj4FCE+YTnJT4Rn4hQ19nP4ANHP2IFDtnWv+/NPis+EaAu8Qls+b0d44b4tP59b8YZ8SlCXcIT2P670tYqWP/L92acEZ8i1CU+gVP7rrEC69/3ZpwRnwLUJT6B0L3X+ID173szzohPEeoSngAAID4RoS7xCQCA+ESAusQnAACIT0So8AQAAPGJCHWJTwAAxCcC1CU8AQBAfCJChScAAIhPBKhLeAIAgPhEhApPAAAQn4hQl+gEAEB8IkBdwhMAAMQnIlR0AgCA+ESAukQnAADiE0So6AQAAPGJCBWeAAAgPhGgLtEJAADiExEqOgEAQHwiQkUnAACITxCgwhMAAMQnIlR0AgCA+ESEik4AABCfIEBFJwAAiE9EqOgEAADxCZMC1LMFAADxiQgVnQAAID4RoaITAADEJwhQ0QkAAOITESo8AQBAfELxCPVMAABAfCJARScAAIhPqBehxh0AAMQnIlR4AgCA+ISaEWpsAQBAfEJYhBpLAAAQnxASosYMAADEJwAAAOITAAAAxCcAAADiEwAAAMQnAAAA4hMAAADxCQAAAOITAAAA8QkAAID4BAAAAPEJAACA+AQAAID/8x84hmyj7oQbjgAAAABJRU5ErkJggg==" alt="VIBE Recognition">
+    </div></div>
+    <div class="cta-headline">Ready to Make Recognition Stick?</div>
+    <p class="cta-sub">VIBE Recognition is live, tested, and ready for your first clients.</p>
+    <div class="cta-boxes">
+      <div class="cta-box cb-primary">Book a Demo<div class="lbl">See it live in 20 minutes</div></div>
+      <div class="cta-box cb-secondary">Pilot Program<div class="lbl">Free 30-day trial</div></div>
+      <div class="cta-box cb-tertiary">See Pricing<div class="lbl">Transparent, per module</div></div>
+    </div>
+    <div class="cta-contact">Will Allan &nbsp;·&nbsp; VIBE Recognition &nbsp;·&nbsp; will@viberecognition.com.au</div>
+    <div class="cta-url">viberecognition.com.au &nbsp;·&nbsp; Built with love in Australia</div>
+  </div>
+
+  <div class="footer-strip">VIBE Recognition &nbsp;·&nbsp; Staff Recognition That Gets Noticed</div>
+
+</div>
+</body>
+</html>

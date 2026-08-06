@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions | VIBE Recognition</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    /* ── Nav bar ── */
+    nav {
+      background: #0B1D3A;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .nav-logo { display: flex; align-items: baseline; gap: 6px; text-decoration: none; }
+    .nav-logo .vibe { color: #0AA6A6; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+    .nav-logo .recognition { color: #F2B233; font-size: 11px; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; }
+    .nav-back { color: #94a3b8; font-size: 13px; text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: #0AA6A6; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0B1D3A 0%, #0d2347 60%, #0AA6A6 100%);
+      padding: 64px 40px 48px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      color: #F2B233;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .hero-meta {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .hero-meta span { color: #0AA6A6; font-weight: 600; }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Legal notice ── */
+    .legal-notice {
+      background: #fff8e1;
+      border: 1.5px solid #F2B233;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 13px;
+      color: #78350f;
+      line-height: 1.6;
+    }
+    .legal-notice strong { color: #92400e; }
+
+    /* ── Table of contents ── */
+    .toc {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .toc h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      columns: 2;
+      column-gap: 24px;
+    }
+    .toc li { margin-bottom: 8px; break-inside: avoid; }
+    .toc a {
+      color: #0AA6A6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .toc a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { columns: 1; } }
+
+    /* ── Sections ── */
+    .section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    @media (max-width: 640px) { .section { padding: 24px 20px; } }
+
+    .section-number {
+      display: inline-block;
+      background: #0B1D3A;
+      color: #0AA6A6;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0B1D3A;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    .section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0B1D3A;
+      margin: 22px 0 8px;
+    }
+    .section p {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      margin: 10px 0 16px 20px;
+      font-size: 14px;
+      color: #374151;
+    }
+    .section li { margin-bottom: 8px; line-height: 1.65; }
+
+    .highlight-box {
+      background: #f0fdfa;
+      border-left: 4px solid #0AA6A6;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #134e4a;
+      line-height: 1.65;
+    }
+    .warning-box {
+      background: #fff7ed;
+      border-left: 4px solid #F2B233;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #7c2d12;
+      line-height: 1.65;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0B1D3A;
+      text-align: center;
+      padding: 40px 24px;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer .footer-logo { color: #0AA6A6; font-size: 20px; font-weight: 900; margin-bottom: 6px; }
+    footer .footer-tag { color: #F2B233; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+    footer a { color: #0AA6A6; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="vibe">VIBE</span>
+    <span class="recognition">Recognition</span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Legal</div>
+  <h1>Terms and Conditions</h1>
+  <p class="hero-meta">
+    Effective date: <span>1 July 2026</span> &nbsp;·&nbsp; Last updated: <span>31 July 2026</span> &nbsp;·&nbsp; Version: <span>1.1</span> &nbsp;·&nbsp; Governing law: <span>Western Australia, Australia</span>
+  </p>
+</div>
+
+<!-- Main content -->
+<div class="page-wrap">
+
+  <!-- Legal notice -->
+  <div class="legal-notice">
+    <strong>Important notice:</strong> These Terms and Conditions constitute a legally binding agreement between you (the Client) and VIBE Recognition. By accessing or using our platform, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the platform. We recommend you retain a copy of these Terms for your records. <strong>These Terms do not constitute legal advice — you are encouraged to seek independent legal advice if you have any questions.</strong>
+  </div>
+
+  <!-- Table of contents -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s1">1. About VIBE Recognition</a></li>
+      <li><a href="#s2">2. Definitions</a></li>
+      <li><a href="#s3">3. The Service</a></li>
+      <li><a href="#s4">4. Licence and Access</a></li>
+      <li><a href="#s5">5. Subscription, Fees &amp; Payment</a></li>
+      <li><a href="#s6">6. Client Obligations &amp; Acceptable Use</a></li>
+      <li><a href="#s7">7. Privacy and Data</a></li>
+      <li><a href="#s8">8. Data Security</a></li>
+      <li><a href="#s9">9. Intellectual Property</a></li>
+      <li><a href="#s10">10. Confidentiality</a></li>
+      <li><a href="#s11">11. Workplace Health &amp; Safety</a></li>
+      <li><a href="#s12">12. Disclaimers &amp; Limitation of Liability</a></li>
+      <li><a href="#s13">13. Indemnification</a></li>
+      <li><a href="#s14">14. Termination &amp; Suspension</a></li>
+      <li><a href="#s15">15. Changes to the Service &amp; These Terms</a></li>
+      <li><a href="#s16">16. Dispute Resolution</a></li>
+      <li><a href="#s17">17. General Provisions</a></li>
+      <li><a href="#s18">18. Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="section-number">01</div>
+    <h2>About VIBE Recognition</h2>
+    <p>VIBE Recognition (<strong>"VIBE"</strong>, <strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong>) is an Australian-owned and operated business providing a cloud-based staff recognition platform. Our registered business operates in Western Australia, Australia.</p>
+    <p>Our platform enables organisations to facilitate staff nominations, generate personalised recognition certificates, and deliver those certificates to employees via email. The platform is accessible via a unique URL or QR code and is delivered as a software-as-a-service (SaaS) product.</p>
+    <p>These Terms and Conditions (<strong>"Terms"</strong>) govern your use of our platform, website, and any associated services. By creating an account, subscribing to our service, or otherwise using our platform, you agree to these Terms on behalf of your organisation.</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="section-number">02</div>
+    <h2>Definitions</h2>
+    <p>In these Terms, unless the context otherwise requires:</p>
+    <ul>
+      <li><strong>"Client"</strong> means the organisation, business, or entity that has subscribed to and is licensed to use the Service.</li>
+      <li><strong>"Platform"</strong> means the VIBE Recognition web-based software application, including all associated features, tools, reports, and outputs.</li>
+      <li><strong>"Service"</strong> means the software-as-a-service offering provided by VIBE Recognition, including the Platform and any related support or documentation.</li>
+      <li><strong>"Admin User"</strong> means an individual authorised by the Client to manage the Client's account on the Platform.</li>
+      <li><strong>"End User"</strong> means any employee, contractor, volunteer, or other individual of the Client who accesses or interacts with the Platform, including nominators and nominees.</li>
+      <li><strong>"Nomination"</strong> means a recognition submission submitted through the Platform by an End User.</li>
+      <li><strong>"Certificate"</strong> means the digital recognition certificate generated by the Platform and delivered to a nominated End User.</li>
+      <li><strong>"Personal Information"</strong> has the meaning given in the <em>Privacy Act 1988</em> (Cth).</li>
+      <li><strong>"Subscription"</strong> means the Client's paid licence to access the Service for a defined period and user tier.</li>
+      <li><strong>"Fees"</strong> means the subscription and setup fees payable by the Client as set out in any proposal, invoice, or pricing schedule.</li>
+      <li><strong>"Force Majeure Event"</strong> means any event beyond the reasonable control of a party, including acts of God, natural disasters, pandemics, war, cyber-attacks, and government actions.</li>
+      <li><strong>"ACL"</strong> means the <em>Australian Consumer Law</em> as set out in Schedule 2 of the <em>Competition and Consumer Act 2010</em> (Cth).</li>
+    </ul>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="section-number">03</div>
+    <h2>The Service</h2>
+    <h3>3.1 What we provide</h3>
+    <p>VIBE Recognition provides a cloud-hosted platform that allows Clients to:</p>
+    <ul>
+      <li>Set up a branded nomination portal accessible to their staff via URL or QR code;</li>
+      <li>Receive and manage staff recognition nominations;</li>
+      <li>Automatically generate personalised PDF recognition certificates;</li>
+      <li>Deliver certificates to nominated staff via email;</li>
+      <li>Access analytics and reporting on nomination activity;</li>
+      <li>Manage multiple locations or business units under a single licence (where applicable).</li>
+    </ul>
+    <h3>3.2 Service availability</h3>
+    <p>We aim to maintain Platform availability of 99% uptime measured on a monthly basis, excluding scheduled maintenance. We will use reasonable efforts to provide advance notice of scheduled maintenance where practicable. We do not guarantee uninterrupted or error-free access to the Service.</p>
+    <h3>3.3 Service modifications</h3>
+    <p>We may update, modify, or discontinue features of the Service from time to time. Where a modification materially reduces core functionality, we will provide at least 30 days' written notice to the Client's nominated contact email address.</p>
+    <h3>3.4 Third-party services</h3>
+    <p>The Platform relies on third-party infrastructure and service providers including cloud hosting, email delivery, and payment processing. We are not liable for disruptions caused by third-party providers, though we will take reasonable steps to minimise impact on the Service.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="section-number">04</div>
+    <h2>Licence and Access</h2>
+    <h3>4.1 Grant of licence</h3>
+    <p>Subject to your compliance with these Terms and payment of the applicable Fees, VIBE Recognition grants the Client a non-exclusive, non-transferable, revocable licence to access and use the Platform during the Subscription period for the Client's internal business purposes only.</p>
+    <h3>4.2 Restrictions</h3>
+    <p>The Client must not, and must ensure its Admin Users and End Users do not:</p>
+    <ul>
+      <li>sublicense, sell, resell, transfer, or otherwise make the Service available to any third party (other than End Users within the Client's organisation);</li>
+      <li>copy, modify, reverse engineer, decompile, or attempt to extract the source code of the Platform;</li>
+      <li>use the Service to develop a competing or substantially similar product;</li>
+      <li>use automated tools, bots, or scripts to access the Platform in a manner that adversely affects its performance;</li>
+      <li>remove or obscure any proprietary notices, branding, or attribution within the Platform;</li>
+      <li>use the Service in any way that violates applicable law.</li>
+    </ul>
+    <h3>4.3 Account credentials</h3>
+    <p>The Client is responsible for maintaining the confidentiality of all account credentials (usernames, passwords, licence keys). The Client must immediately notify VIBE Recognition if it suspects any unauthorised access to or use of its account.</p>
+    <h3>4.4 Multi-location licences</h3>
+    <p>Where the Client's Subscription covers multiple business locations or entities, each location is subject to these Terms. The Client is responsible for ensuring all locations comply with these Terms.</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="section-number">05</div>
+    <h2>Subscription, Fees &amp; Payment</h2>
+    <h3>5.1 Subscription tiers</h3>
+    <p>The Service is offered in subscription tiers based on staff headcount and feature access as set out in our current pricing schedule or in the proposal issued to the Client. Pricing is subject to change with 30 days' written notice.</p>
+    <h3>5.2 Fees and GST</h3>
+    <p>All Fees are quoted in Australian Dollars (AUD). Unless otherwise stated, Fees are exclusive of Goods and Services Tax (GST). Where GST applies, it will be added to the applicable Fee and detailed in our tax invoices. We hold (or will hold) an Australian Business Number (ABN) and are (or will be) registered for GST purposes.</p>
+    <h3>5.3 Payment terms</h3>
+    <p>Fees are payable in accordance with the payment terms set out in the relevant invoice or proposal, generally within 14 days of the invoice date unless otherwise agreed in writing. Overdue amounts may attract interest at the rate of 10% per annum calculated daily.</p>
+    <h3>5.4 Setup fee</h3>
+    <p>A one-off setup fee may apply to new Subscriptions. This fee is non-refundable once onboarding has commenced.</p>
+    <h3>5.5 Renewal</h3>
+    <p>Subscriptions renew automatically at the end of each billing period unless the Client provides at least 30 days' written notice of non-renewal prior to the end of the current period.</p>
+    <h3>5.6 Non-payment</h3>
+    <p>If the Client fails to pay any amount due within 14 days of the due date, VIBE Recognition may suspend access to the Service without liability, and may terminate the Subscription after a further 14 days' written notice to the Client.</p>
+    <h3>5.7 Refunds</h3>
+    <p>Subscription Fees paid in advance are non-refundable except where required by the ACL or as otherwise agreed in writing. Where a Client is entitled to a refund under the ACL, we will process that refund promptly.</p>
+    <div class="highlight-box">
+      <strong>Australian Consumer Law:</strong> Nothing in these Terms limits or excludes any guarantee, right, or remedy that cannot be excluded under the ACL. Where the ACL applies and we fail to comply with a consumer guarantee, your rights may include repair, replacement, or a refund.
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="section-number">06</div>
+    <h2>Client Obligations &amp; Acceptable Use</h2>
+    <h3>6.1 General obligations</h3>
+    <p>The Client agrees to:</p>
+    <ul>
+      <li>use the Service only for lawful purposes and in accordance with these Terms;</li>
+      <li>ensure that all Admin Users are appropriately trained and authorised to use the Platform;</li>
+      <li>ensure that End Users are informed that the Platform is used by the organisation for staff recognition purposes;</li>
+      <li>promptly notify VIBE Recognition of any suspected security incidents or misuse of the Platform;</li>
+      <li>maintain accurate account and billing information throughout the Subscription period.</li>
+    </ul>
+    <h3>6.2 Staff consent and awareness</h3>
+    <p>The Client is responsible for ensuring that its End Users are made aware that their personal information (including name, email address, and recognition history) will be collected and used via the Platform. This includes providing appropriate notice to staff in accordance with the ACL, the <em>Privacy Act 1988</em> (Cth), and any applicable workplace policies or enterprise agreements.</p>
+    <h3>6.3 Prohibited uses</h3>
+    <p>The Client must not use the Service to:</p>
+    <ul>
+      <li>transmit content that is discriminatory, harassing, defamatory, offensive, or otherwise unlawful under Australian law, including under the <em>Fair Work Act 2009</em> (Cth), the <em>Age Discrimination Act 2004</em> (Cth), the <em>Disability Discrimination Act 1992</em> (Cth), the <em>Racial Discrimination Act 1975</em> (Cth), or the <em>Sex Discrimination Act 1984</em> (Cth);</li>
+      <li>target, exclude, or disadvantage any individual based on a protected attribute under Australian law;</li>
+      <li>submit nominations that are false, misleading, or constitute a form of workplace bullying or harassment;</li>
+      <li>use the nomination and recognition data as a covert surveillance mechanism or as the sole basis for formal disciplinary or performance management decisions;</li>
+      <li>upload or transmit malicious code, viruses, or other harmful content;</li>
+      <li>use the Service in a way that creates unreasonable risks to the psychological safety or wellbeing of any End User.</li>
+    </ul>
+    <h3>6.4 Responsibility for user conduct</h3>
+    <p>The Client is responsible for all actions taken by its Admin Users and End Users on the Platform. Any breach of these Terms by an Admin User or End User is treated as a breach by the Client.</p>
+    <div class="warning-box">
+      <strong>Important:</strong> Recognition programs are powerful tools for workplace culture. Used inappropriately, they can cause harm. The Client must ensure the Platform is used fairly, inclusively, and in a manner consistent with its obligations under applicable workplace relations and anti-discrimination legislation.
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="section-number">07</div>
+    <h2>Privacy and Data</h2>
+    <h3>7.1 Privacy Act compliance</h3>
+    <p>VIBE Recognition is committed to handling Personal Information in accordance with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs). Our Privacy Policy (available at <a href="/privacy">viberecognition.com.au/privacy</a>) sets out in detail how we collect, use, store, and disclose Personal Information.</p>
+    <h3>7.2 Data collected</h3>
+    <p>In the course of providing the Service, VIBE Recognition may collect the following Personal Information:</p>
+    <ul>
+      <li>Names and email addresses of Admin Users;</li>
+      <li>Names, email addresses, and department information of End Users (nominees and nominators);</li>
+      <li>Nomination content submitted through the Platform;</li>
+      <li>Usage data and analytics related to Platform activity;</li>
+      <li>Billing and contact information provided by the Client.</li>
+    </ul>
+    <h3>7.3 Use of data</h3>
+    <p>We use Personal Information solely for the purposes of providing and improving the Service, communicating with the Client, complying with our legal obligations, and where permitted, for aggregated (de-identified) analytics and product development purposes. We do not sell or rent Personal Information to third parties.</p>
+    <h3>7.4 Data processor role</h3>
+    <p>With respect to the Personal Information of End Users, VIBE Recognition acts as a data processor on behalf of the Client (who acts as the data controller). The Client is responsible for ensuring it has a lawful basis for providing End Users' Personal Information to VIBE Recognition and for obtaining any necessary consents.</p>
+    <h3>7.5 Data residency</h3>
+    <p>Client data is stored on servers located in Australia or, where our infrastructure providers utilise global data centres, subject to appropriate data transfer safeguards. We will not store data in jurisdictions that do not provide an adequate level of privacy protection without the Client's consent.</p>
+    <h3>7.6 Data retention</h3>
+    <p>We retain Client data for the duration of the Subscription and for a period of 12 months following termination, after which it is permanently deleted unless otherwise required by law. The Client may request earlier deletion of data at any time by written notice to VIBE Recognition.</p>
+    <h3>7.7 Spam Act compliance</h3>
+    <p>All emails sent by the Platform (including certificates, welcome emails, and digest emails) are sent on behalf of the Client and in accordance with the <em>Spam Act 2003</em> (Cth). The Client is responsible for ensuring it has the appropriate consent or authority to send commercial electronic messages to its End Users through the Platform.</p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="section-number">08</div>
+    <h2>Data Security</h2>
+    <h3>8.1 Security measures</h3>
+    <p>VIBE Recognition implements reasonable technical and organisational security measures designed to protect Personal Information and Client data from unauthorised access, disclosure, alteration, or destruction. These measures include:</p>
+    <ul>
+      <li>Encrypted data transmission (HTTPS/TLS);</li>
+      <li>HMAC-signed authentication tokens;</li>
+      <li>CSRF protection on all authenticated actions;</li>
+      <li>Rate limiting and account lockout controls;</li>
+      <li>Cloudflare CAPTCHA on public-facing forms;</li>
+      <li>Access controls segregating client data by tenant.</li>
+    </ul>
+    <h3>8.2 No absolute guarantee</h3>
+    <p>Notwithstanding the above, no method of transmission over the internet or method of electronic storage is completely secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+    <h3>8.3 Data breach notification</h3>
+    <p>In the event of a data breach that is likely to result in serious harm to any affected individuals, VIBE Recognition will notify the Client and (where required) the Office of the Australian Information Commissioner (OAIC) in accordance with the Notifiable Data Breaches scheme under the <em>Privacy Act 1988</em> (Cth).</p>
+    <h3>8.4 Client's security responsibilities</h3>
+    <p>The Client is responsible for maintaining the security of its own systems and for ensuring that Admin User credentials are kept confidential. The Client must promptly notify VIBE Recognition of any known or suspected security breach affecting its account.</p>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="section-number">09</div>
+    <h2>Intellectual Property</h2>
+    <h3>9.1 VIBE Recognition's IP</h3>
+    <p>All intellectual property rights in the Platform, including its software, design, code, templates, reports, and documentation, are and remain the exclusive property of VIBE Recognition (or its licensors). These Terms do not transfer any ownership of intellectual property to the Client.</p>
+    <h3>9.2 Client's IP and branding</h3>
+    <p>The Client retains all intellectual property rights in its own branding materials (including logos, colour schemes, and trade marks) that it uploads to the Platform. By uploading such materials, the Client grants VIBE Recognition a non-exclusive, royalty-free licence to use those materials solely for the purpose of providing the Service to the Client.</p>
+    <h3>9.3 Nomination content</h3>
+    <p>The Client and its End Users retain ownership of the content submitted through nomination forms. VIBE Recognition may use de-identified, aggregated nomination data for product improvement and analytics purposes, but will not disclose identifiable nomination content to third parties without the Client's consent.</p>
+    <h3>9.4 Feedback</h3>
+    <p>If the Client provides feedback or suggestions regarding the Service, VIBE Recognition may use such feedback freely without any obligation to the Client.</p>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10">
+    <div class="section-number">10</div>
+    <h2>Confidentiality</h2>
+    <h3>10.1 Mutual confidentiality</h3>
+    <p>Each party agrees to keep confidential all Confidential Information of the other party and to use such information only for the purposes of performing obligations or exercising rights under these Terms.</p>
+    <h3>10.2 Definition</h3>
+    <p><strong>"Confidential Information"</strong> means any non-public information disclosed by one party to the other that is identified as confidential, or that a reasonable person would understand to be confidential given the nature of the information and the circumstances of disclosure. This includes (but is not limited to) pricing, platform architecture, business plans, and Client data.</p>
+    <h3>10.3 Exceptions</h3>
+    <p>Confidentiality obligations do not apply to information that: (a) is or becomes publicly known through no fault of the receiving party; (b) was already known to the receiving party before disclosure; (c) is required to be disclosed by law or by a regulatory authority; or (d) is independently developed by the receiving party without reference to the Confidential Information.</p>
+    <h3>10.4 Duration</h3>
+    <p>Confidentiality obligations survive termination of these Terms for a period of 3 years.</p>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section" id="s11">
+    <div class="section-number">11</div>
+    <h2>Workplace Health &amp; Safety</h2>
+    <h3>11.1 Client's WHS obligations</h3>
+    <p>The Client, as an employer or person conducting a business or undertaking (PCBU), retains all obligations under applicable workplace health and safety legislation, including (as applicable) the <em>Work Health and Safety Act 2020</em> (WA) and equivalent legislation in other Australian jurisdictions. The use of VIBE Recognition's Platform does not transfer or diminish the Client's WHS obligations.</p>
+    <h3>11.2 Psychological safety</h3>
+    <p>Recognition programs have the potential to positively or negatively affect the psychological health and safety of workers. The Client is responsible for:</p>
+    <ul>
+      <li>implementing the Platform in a manner that promotes psychological safety and inclusivity;</li>
+      <li>ensuring the nomination process is not used to embarrass, single out, or harm any individual;</li>
+      <li>monitoring the impact of the recognition program on workplace culture and adjusting usage accordingly;</li>
+      <li>providing appropriate support channels for workers who raise concerns about how the program is being used.</li>
+    </ul>
+    <h3>11.3 Inclusive design</h3>
+    <p>The Client is encouraged to consult with its workforce, including any relevant health and safety representatives, when designing and implementing its recognition program to ensure the program is equitable, accessible, and culturally appropriate.</p>
+    <h3>11.4 VIBE Recognition's limitation</h3>
+    <p>VIBE Recognition is a technology provider only. We are not a workplace relations adviser, WHS consultant, or psychosocial risk assessor. We are not responsible for the organisational or human impact of how the Client implements its recognition program. The Client is solely responsible for those outcomes.</p>
+    <div class="highlight-box">
+      <strong>Tip:</strong> For guidance on recognition programs and psychosocial hazards, the Client may refer to the Safe Work Australia <em>Guide to Managing Psychosocial Hazards at Work</em> and the relevant guidance published by WorkSafe WA (or the applicable authority in your state or territory).
+    </div>
+  </div>
+
+  <!-- Section 12 -->
+  <div class="section" id="s12">
+    <div class="section-number">12</div>
+    <h2>Disclaimers &amp; Limitation of Liability</h2>
+    <h3>12.1 Consumer guarantees under the ACL</h3>
+    <p>Where the Client is a "consumer" as defined in the ACL, certain consumer guarantees apply to our Service that cannot be excluded, restricted, or modified. Nothing in these Terms is intended to limit those guarantees.</p>
+    <h3>12.2 Exclusion of implied warranties</h3>
+    <p>To the maximum extent permitted by law, VIBE Recognition excludes all representations, warranties, and conditions not expressly stated in these Terms. The Service is provided "as is" and "as available." We do not warrant that the Service will be error-free, uninterrupted, or free from viruses or harmful components.</p>
+    <h3>12.3 Limitation of liability</h3>
+    <p>To the maximum extent permitted by law, VIBE Recognition's total aggregate liability to the Client for any claim arising out of or in connection with these Terms or the Service (whether in contract, tort, negligence, or otherwise) is limited to the total Fees paid by the Client in the 3 months immediately preceding the event giving rise to the claim.</p>
+    <h3>12.4 Exclusion of consequential loss</h3>
+    <p>To the maximum extent permitted by law, VIBE Recognition is not liable for any indirect, incidental, special, consequential, or exemplary loss or damage, including loss of profits, loss of revenue, loss of data, loss of goodwill, or business interruption, even if advised of the possibility of such loss.</p>
+    <h3>12.5 ACL savings provision</h3>
+    <p>If the ACL applies and our liability cannot be excluded, then to the extent permitted by section 64A of the ACL, our liability is limited (at our election) to resupplying the Service or paying the cost of having the Service resupplied.</p>
+    <h3>12.6 No liability for third-party actions</h3>
+    <p>We are not liable for any loss or damage arising from the acts or omissions of third-party service providers (including email delivery services, cloud infrastructure providers, or payment processors), except to the extent caused directly by our negligence.</p>
+  </div>
+
+  <!-- Section 13 -->
+  <div class="section" id="s13">
+    <div class="section-number">13</div>
+    <h2>Indemnification</h2>
+    <p>The Client agrees to indemnify, defend, and hold harmless VIBE Recognition and its officers, employees, and contractors from and against any claims, losses, damages, costs, and expenses (including reasonable legal fees) arising from:</p>
+    <ul>
+      <li>the Client's (or its Admin Users' or End Users') breach of these Terms;</li>
+      <li>the Client's use of the Service in violation of any applicable law or regulation;</li>
+      <li>any claim by an End User or third party relating to the Client's implementation or administration of its recognition program;</li>
+      <li>any intellectual property infringement arising from materials uploaded to the Platform by the Client.</li>
+    </ul>
+    <p>This indemnification obligation does not apply to any claim arising from VIBE Recognition's own negligence or wilful misconduct.</p>
+  </div>
+
+  <!-- Section 14 -->
+  <div class="section" id="s14">
+    <div class="section-number">14</div>
+    <h2>Termination &amp; Suspension</h2>
+    <h3>14.1 Termination by Client</h3>
+    <p>The Client may terminate its Subscription by providing 30 days' written notice to VIBE Recognition at <a href="mailto:accounts@viberecognition.com.au">accounts@viberecognition.com.au</a>.</p>
+    <p><strong>Month-to-month subscriptions:</strong> Cancellation takes effect at the end of the current billing cycle following the 30-day notice period. No refund is provided for the remaining days of the final billing cycle.</p>
+    <p><strong>Annual subscriptions (paid upfront):</strong> If the Client has paid for an annual Subscription in advance, cancellation will take effect at the end of the current annual contract year. The Service will remain active and accessible until that date. No partial refund of the annual fee is provided for the unused portion of the term, unless otherwise required by the ACL.</p>
+    <p><strong>Early termination fee:</strong> Where a Client terminates an annual Subscription before the end of the current annual contract year (other than due to a material breach by VIBE Recognition), an early termination fee equal to the lesser of (a) the remaining Fees due for the balance of the annual term or (b) one month's equivalent subscription fee, will apply. VIBE Recognition will issue a tax invoice for any early termination fee payable.</p>
+    <h3>14.2 Termination by VIBE Recognition</h3>
+    <p>VIBE Recognition may terminate these Terms and the Client's access to the Service immediately upon written notice if the Client:</p>
+    <ul>
+      <li>materially breaches these Terms and fails to remedy that breach within 14 days of written notice;</li>
+      <li>becomes insolvent, enters administration, receivership, or liquidation;</li>
+      <li>uses the Service in a manner that VIBE Recognition reasonably believes is unlawful or likely to cause harm.</li>
+    </ul>
+    <h3>14.3 Suspension</h3>
+    <p>VIBE Recognition may suspend the Client's access to the Service (without terminating these Terms) if the Client fails to pay any overdue amount within 14 days of written notice, or if VIBE Recognition reasonably suspects a security incident or misuse of the Platform. We will restore access promptly once the issue is resolved.</p>
+    <h3>14.4 Effect of termination</h3>
+    <p>Upon termination of these Terms: (a) all licences granted to the Client cease immediately; (b) the Client must immediately cease using the Service; (c) VIBE Recognition will retain Client data for 12 months then delete it, unless the Client requests earlier deletion; (d) any outstanding Fees become immediately payable.</p>
+  </div>
+
+  <!-- Section 15 -->
+  <div class="section" id="s15">
+    <div class="section-number">15</div>
+    <h2>Changes to the Service &amp; These Terms</h2>
+    <h3>15.1 Changes to the Service</h3>
+    <p>We may update, improve, or modify the features of the Service from time to time. We will aim to notify the Client of material changes that negatively affect the Service at least 30 days in advance.</p>
+    <h3>15.2 Changes to these Terms</h3>
+    <p>We may update these Terms from time to time. Where we make material changes, we will notify the Client by email to the nominated contact address at least 30 days before the changes take effect. Continued use of the Service after that date constitutes acceptance of the updated Terms. If the Client does not accept the changes, it may terminate its Subscription before the changes take effect.</p>
+  </div>
+
+  <!-- Section 16 -->
+  <div class="section" id="s16">
+    <div class="section-number">16</div>
+    <h2>Dispute Resolution</h2>
+    <h3>16.1 Good faith negotiation</h3>
+    <p>If a dispute arises between the parties in connection with these Terms, the parties must first attempt to resolve the dispute through good faith negotiation. Either party may initiate this process by providing written notice to the other setting out the nature of the dispute and the resolution sought.</p>
+    <h3>16.2 Mediation</h3>
+    <p>If the dispute is not resolved within 20 business days of the written notice, either party may refer the dispute to mediation administered by the Institute of Arbitrators and Mediators Australia (IAMA) or another mutually agreed mediator. The cost of mediation will be shared equally between the parties unless the mediator determines otherwise.</p>
+    <h3>16.3 Legal proceedings</h3>
+    <p>If the dispute is not resolved through mediation, either party may commence legal proceedings. Nothing in this clause prevents a party from seeking urgent interlocutory or injunctive relief from a court.</p>
+    <h3>16.4 Jurisdiction</h3>
+    <p>These Terms are governed by and construed in accordance with the laws of Western Australia, Australia. Each party irrevocably submits to the non-exclusive jurisdiction of the courts of Western Australia and the Federal Court of Australia.</p>
+    <h3>16.5 Small business disputes</h3>
+    <p>Where the Client is a small business and believes these Terms contain an unfair contract term within the meaning of the ACL, the Client may seek a determination from the Australian Competition and Consumer Commission (ACCC) or a court of competent jurisdiction.</p>
+  </div>
+
+  <!-- Section 17 -->
+  <div class="section" id="s17">
+    <div class="section-number">17</div>
+    <h2>General Provisions</h2>
+    <h3>17.1 Entire agreement</h3>
+    <p>These Terms, together with any applicable proposal, invoice, or schedule accepted by the Client, constitute the entire agreement between the parties with respect to the Service and supersede all prior negotiations, representations, and agreements.</p>
+    <h3>17.2 Severability</h3>
+    <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, that provision will be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible, without affecting the remaining provisions.</p>
+    <h3>17.3 Waiver</h3>
+    <p>A failure or delay by VIBE Recognition to exercise any right or remedy under these Terms does not constitute a waiver of that right or remedy. A waiver of any breach does not constitute a waiver of any subsequent breach.</p>
+    <h3>17.4 Force Majeure</h3>
+    <p>Neither party will be liable for any delay or failure to perform its obligations under these Terms to the extent caused by a Force Majeure Event, provided the affected party gives prompt written notice to the other and takes reasonable steps to minimise the impact of the Force Majeure Event.</p>
+    <h3>17.5 Assignment</h3>
+    <p>The Client may not assign or transfer its rights or obligations under these Terms without VIBE Recognition's prior written consent. VIBE Recognition may assign these Terms (in whole or in part) to a related entity or in connection with a business sale or restructure, with reasonable notice to the Client.</p>
+    <h3>17.6 Notices</h3>
+    <p>All formal notices under these Terms must be in writing and delivered by email to the Client's nominated contact email address or to <a href="mailto:info@viberecognition.com.au">info@viberecognition.com.au</a> for notices to VIBE Recognition. Notices are deemed received on the next business day after sending if no delivery failure notice is received.</p>
+    <h3>17.7 Electronic acceptance</h3>
+    <p>In accordance with the <em>Electronic Transactions Act 1999</em> (Cth), these Terms may be accepted electronically (including by clicking "I agree," continuing to use the Service after receiving notice of updated Terms, or by signing a digital proposal or agreement). Electronic acceptance is legally binding.</p>
+    <h3>17.8 No partnership or agency</h3>
+    <p>These Terms do not create any partnership, joint venture, employment, or agency relationship between the parties. Neither party has the authority to bind the other in any way.</p>
+  </div>
+
+  <!-- Section 18 -->
+  <div class="section" id="s18">
+    <div class="section-number">18</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about these Terms, our Privacy Policy, or how we handle your data, please contact us:</p>
+    <div class="highlight-box" style="margin-top: 20px;">
+      <strong>VIBE Recognition</strong><br>
+      Perth, Western Australia, Australia<br><br>
+      Email: <a href="mailto:info@viberecognition.com.au">info@viberecognition.com.au</a><br>
+      Website: <a href="https://viberecognition.com.au">viberecognition.com.au</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 13px; color: #9ca3af;">
+      <em>These Terms and Conditions were drafted with reference to Australian law as it applies to software-as-a-service businesses. They are intended as a starting point and do not constitute legal advice. VIBE Recognition recommends seeking advice from a qualified Australian solicitor to ensure these Terms are appropriate for your specific circumstances and are kept current with changes in law.</em>
+    </p>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">VIBE</div>
+  <div class="footer-tag">Recognition</div>
+  <p style="margin-bottom: 12px;">
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+    <a href="mailto:info@viberecognition.com.au">Contact</a>
+  </p>
+  <p>© 2026 VIBE Recognition. All rights reserved. ABN 47 172 497 544 &nbsp;·&nbsp; Terms v1.1 — 31 July 2026</p>
+  <p style="margin-top: 8px; font-size: 11px; color: #475569;">
+    Proudly Australian · Perth, Western Australia
+  </p>
+</footer>
+
+</body>
+</html>
