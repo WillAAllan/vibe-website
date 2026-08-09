@@ -197,18 +197,38 @@
     footer .footer-tag { color: #F2B233; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
     footer a { color: #0AA6A6; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-  </style>
+  
+/* == Unified site nav (identical on every page) == */
+.site-nav,.site-nav *{box-sizing:border-box;line-height:1.4;margin:0;}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#0B1D3A;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.25);font-family:'Montserrat',sans-serif;}
+.site-nav-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none;}
+.site-nav-brand span{color:#F2B233;}
+.site-nav-links{display:flex;gap:28px;align-items:center;flex-wrap:nowrap;}
+.site-nav-links a{color:#fff;font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s;white-space:nowrap;text-decoration:none;}
+.site-nav-links a:hover{opacity:1;color:#4FD1C5;}
+.site-nav-links a.site-nav-cta{background:#F2B233;color:#0B1D3A;padding:9px 20px;border-radius:7px;font-weight:700;opacity:1;}
+.site-nav-links a.site-nav-cta:hover{background:#e6a620;color:#0B1D3A;}
+.site-nav-links a.site-nav-login{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:#fff;padding:8px 18px;border-radius:7px;font-weight:600;opacity:1;font-size:13px;}
+.site-nav-links a.site-nav-login:hover{border-color:#4FD1C5;color:#4FD1C5;}
+@media(max-width:900px){.site-nav-links{display:none;}}
+</style>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav>
-  <a href="/" class="nav-logo">
-    <span class="vibe">VIBE</span>
-    <span class="recognition">Recognition</span>
-  </a>
-  <a href="/" class="nav-back">← Back to home</a>
-</nav>
+  <div class="site-nav" role="navigation" aria-label="Primary">
+    <a href="/" class="site-nav-brand">VIBE <span>RECOGNITION</span></a>
+    <div class="site-nav-links">
+      <a href="/#modules">Modules</a>
+      <a href="/#suite">Platform</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#why">Why VIBE</a>
+      <a href="/library">How-To Videos</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/#contact" class="site-nav-cta">Book a Demo</a>
+      <a href="/portal" class="site-nav-login">Client Portal &rarr;</a>
+    </div>
+  </div>
 
 <!-- Hero -->
 <div class="hero">

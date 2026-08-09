@@ -65,25 +65,37 @@
 
   footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:32px 24px;font-size:13px;}
   footer a{color:var(--light-teal);}
+
+/* == Unified site nav (identical on every page) == */
+.site-nav,.site-nav *{box-sizing:border-box;line-height:1.4;margin:0;}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#0B1D3A;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.25);font-family:'Montserrat',sans-serif;}
+.site-nav-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none;}
+.site-nav-brand span{color:#F2B233;}
+.site-nav-links{display:flex;gap:28px;align-items:center;flex-wrap:nowrap;}
+.site-nav-links a{color:#fff;font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s;white-space:nowrap;text-decoration:none;}
+.site-nav-links a:hover{opacity:1;color:#4FD1C5;}
+.site-nav-links a.site-nav-cta{background:#F2B233;color:#0B1D3A;padding:9px 20px;border-radius:7px;font-weight:700;opacity:1;}
+.site-nav-links a.site-nav-cta:hover{background:#e6a620;color:#0B1D3A;}
+.site-nav-links a.site-nav-login{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:#fff;padding:8px 18px;border-radius:7px;font-weight:600;opacity:1;font-size:13px;}
+.site-nav-links a.site-nav-login:hover{border-color:#4FD1C5;color:#4FD1C5;}
+@media(max-width:900px){.site-nav-links{display:none;}}
 </style>
 </head>
 <body>
 
-  <nav>
-    <div class="brand">
-      VIBE <span>RECOGNITION</span>
-    </div>
-    <div class="nav-links">
-      <a href="index.html#modules">Modules</a>
-      <a href="index.html#suite">Platform</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#why">Why VIBE</a>
+    <div class="site-nav" role="navigation" aria-label="Primary">
+    <a href="/" class="site-nav-brand">VIBE <span>RECOGNITION</span></a>
+    <div class="site-nav-links">
+      <a href="/#modules">Modules</a>
+      <a href="/#suite">Platform</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#why">Why VIBE</a>
       <a href="/library">How-To Videos</a>
-      <a href="resources.html" style="opacity:1;color:var(--light-teal);">Resources</a>
-      <a href="index.html#contact" class="nav-cta">Book a Demo</a>
-      <a href="https://app.viberecognition.com.au/admin/login" target="_blank" class="nav-login">Login →</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/#contact" class="site-nav-cta">Book a Demo</a>
+      <a href="/portal" class="site-nav-login">Client Portal &rarr;</a>
     </div>
-  </nav>
+  </div>
 
   <section class="res-hero">
     <div class="eyebrow">Resources</div>
