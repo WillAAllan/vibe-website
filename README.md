@@ -9,7 +9,7 @@ The repo *is* the published site — Netlify serves the root directly (`netlify.
 `publish = "."`). Files are already named as they're served:
 
 - `index.html` — homepage
-- `terms.html`, `resources.html`, `library.html`, `portal.html`, `infographic.html`
+- `terms.html`, `resources.html`, `library.html`, `portal.html`
 - the 8 `VIBE_*.pdf` module/marketing PDFs (linked from `resources.html`)
 - `favicon.png` (at root; pages reference `/favicon.png`)
 - `sitemap.xml`
