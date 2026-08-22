@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | VIBE Recognition</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    /* ── Nav bar ── */
+    nav {
+      background: #0B1D3A;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .nav-logo { display: flex; align-items: baseline; gap: 6px; text-decoration: none; }
+    .nav-logo .vibe { color: #0AA6A6; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+    .nav-logo .recognition { color: #F2B233; font-size: 11px; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; }
+    .nav-back { color: #94a3b8; font-size: 13px; text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: #0AA6A6; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0B1D3A 0%, #0d2347 60%, #0AA6A6 100%);
+      padding: 64px 40px 48px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      color: #F2B233;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .hero-meta {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .hero-meta span { color: #0AA6A6; font-weight: 600; }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Legal notice ── */
+    .legal-notice {
+      background: #fff8e1;
+      border: 1.5px solid #F2B233;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 13px;
+      color: #78350f;
+      line-height: 1.6;
+    }
+    .legal-notice strong { color: #92400e; }
+
+    /* ── Table of contents ── */
+    .toc {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .toc h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      columns: 2;
+      column-gap: 24px;
+    }
+    .toc li { margin-bottom: 8px; break-inside: avoid; }
+    .toc a {
+      color: #0AA6A6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .toc a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .toc ol { columns: 1; } }
+
+    /* ── Sections ── */
+    .section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    @media (max-width: 640px) { .section { padding: 24px 20px; } }
+
+    .section-number {
+      display: inline-block;
+      background: #0B1D3A;
+      color: #0AA6A6;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0B1D3A;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    .section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0B1D3A;
+      margin: 22px 0 8px;
+    }
+    .section p {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      margin: 10px 0 16px 20px;
+      font-size: 14px;
+      color: #374151;
+    }
+    .section li { margin-bottom: 8px; line-height: 1.65; }
+
+    .highlight-box {
+      background: #f0fdfa;
+      border-left: 4px solid #0AA6A6;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #134e4a;
+      line-height: 1.65;
+    }
+    .warning-box {
+      background: #fff7ed;
+      border-left: 4px solid #F2B233;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #7c2d12;
+      line-height: 1.65;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0B1D3A;
+      text-align: center;
+      padding: 40px 24px;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer .footer-logo { color: #0AA6A6; font-size: 20px; font-weight: 900; margin-bottom: 6px; }
+    footer .footer-tag { color: #F2B233; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+    footer a { color: #0AA6A6; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+/* == Unified site nav (identical on every page) == */
+.site-nav,.site-nav *{box-sizing:border-box;line-height:1.4;margin:0;}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#0B1D3A;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.25);font-family:'Montserrat',sans-serif;}
+.site-nav-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none;}
+.site-nav-brand span{color:#F2B233;}
+.site-nav-links{display:flex;gap:28px;align-items:center;flex-wrap:nowrap;}
+.site-nav-links a{color:#fff;font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s;white-space:nowrap;text-decoration:none;}
+.site-nav-links a:hover{opacity:1;color:#4FD1C5;}
+.site-nav-links a.site-nav-cta{background:#F2B233;color:#0B1D3A;padding:9px 20px;border-radius:7px;font-weight:700;opacity:1;}
+.site-nav-links a.site-nav-cta:hover{background:#e6a620;color:#0B1D3A;}
+.site-nav-links a.site-nav-login{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:#fff;padding:8px 18px;border-radius:7px;font-weight:600;opacity:1;font-size:13px;}
+.site-nav-links a.site-nav-login:hover{border-color:#4FD1C5;color:#4FD1C5;}
+@media(max-width:900px){.site-nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+  <div class="site-nav" role="navigation" aria-label="Primary">
+    <a href="/" class="site-nav-brand">VIBE <span>RECOGNITION</span></a>
+    <div class="site-nav-links">
+      <a href="/#modules">Modules</a>
+      <a href="/#suite">Platform</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#why">Why VIBE</a>
+      <a href="/library">How-To Videos</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/#contact" class="site-nav-cta">Book a Demo</a>
+      <a href="/portal" class="site-nav-login">Client Portal &rarr;</a>
+    </div>
+  </div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-meta">
+    Effective date: <span>22 August 2026</span> &nbsp;·&nbsp; Last updated: <span>22 August 2026</span> &nbsp;·&nbsp; Version: <span>1.0</span> &nbsp;·&nbsp; Governing law: <span>Western Australia, Australia</span>
+  </p>
+</div>
+
+<!-- Main content -->
+<div class="page-wrap">
+
+  <!-- Legal notice -->
+  <div class="legal-notice">
+    <strong>Your privacy matters.</strong> This Privacy Policy explains how VIBE Recognition collects, uses, stores, discloses, and protects your Personal Information, and how we comply with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs). By using our website or platform, you acknowledge that you have read and understood this policy. <strong>This policy is provided for transparency and does not constitute legal advice.</strong>
+  </div>
+
+  <!-- Table of contents -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s1">1. About This Policy</a></li>
+      <li><a href="#s2">2. What Is Personal Information</a></li>
+      <li><a href="#s3">3. Information We Collect</a></li>
+      <li><a href="#s4">4. How We Collect It</a></li>
+      <li><a href="#s5">5. Why We Collect &amp; How We Use It</a></li>
+      <li><a href="#s6">6. Our Role: Controller vs Processor</a></li>
+      <li><a href="#s7">7. Disclosure to Third Parties</a></li>
+      <li><a href="#s8">8. Direct Marketing &amp; Email</a></li>
+      <li><a href="#s9">9. Overseas Disclosure &amp; Data Residency</a></li>
+      <li><a href="#s10">10. Cookies &amp; Analytics</a></li>
+      <li><a href="#s11">11. Data Security</a></li>
+      <li><a href="#s12">12. Data Retention &amp; Deletion</a></li>
+      <li><a href="#s13">13. Accessing &amp; Correcting Your Information</a></li>
+      <li><a href="#s14">14. Data Breach Notification</a></li>
+      <li><a href="#s15">15. Children's Privacy</a></li>
+      <li><a href="#s16">16. Making a Complaint</a></li>
+      <li><a href="#s17">17. Changes to This Policy</a></li>
+      <li><a href="#s18">18. Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="section-number">01</div>
+    <h2>About This Policy</h2>
+    <p>VIBE Recognition (<strong>"VIBE"</strong>, <strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong>) is an Australian-owned and operated business based in Perth, Western Australia, providing a cloud-based staff recognition, wellbeing, scheduling, and workplace-safety platform delivered as software-as-a-service (SaaS).</p>
+    <p>We are committed to protecting the privacy of the individuals whose Personal Information we handle, and to complying with the <em>Privacy Act 1988</em> (Cth) (<strong>"Privacy Act"</strong>) and the Australian Privacy Principles (<strong>"APPs"</strong>) contained in it.</p>
+    <p>This Privacy Policy applies to Personal Information we collect through our website (<a href="https://viberecognition.com.au">viberecognition.com.au</a>), our platform, and in the course of our business dealings. It should be read together with our <a href="/terms">Terms and Conditions</a>.</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="section-number">02</div>
+    <h2>What Is Personal Information</h2>
+    <p><strong>"Personal Information"</strong> has the meaning given in the Privacy Act: information or an opinion about an identified individual, or an individual who is reasonably identifiable, whether the information is true or not and whether recorded in a material form or not.</p>
+    <p>Examples relevant to our Service include a person's name, email address, department or role, and the content of recognition nominations. We do not intentionally collect "sensitive information" (as defined in the Privacy Act, such as health, racial, or religious information) unless a Client chooses to include it in content they submit — and we ask Clients not to.</p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="section-number">03</div>
+    <h2>Information We Collect</h2>
+    <p>The Personal Information we collect depends on how you interact with us. It may include:</p>
+    <h3>3.1 Client &amp; administrator information</h3>
+    <ul>
+      <li>Names, email addresses, and roles of administrators authorised to manage a Client account;</li>
+      <li>Business contact and billing information (organisation name, contact email, billing details);</li>
+      <li>Account credentials (usernames and securely hashed passwords).</li>
+    </ul>
+    <h3>3.2 End-user information (submitted by our Clients)</h3>
+    <ul>
+      <li>Names, email addresses, and department or team information of staff (nominators and nominees);</li>
+      <li>Recognition nomination content submitted through the platform;</li>
+      <li>For optional modules a Client enables — scheduling/rostering details, wellbeing "pulse" survey responses, and workplace health &amp; safety (WHS) incident records — as configured by the Client.</li>
+    </ul>
+    <h3>3.3 Website &amp; usage information</h3>
+    <ul>
+      <li>Information you provide via enquiry, demo-request, or contact forms;</li>
+      <li>Technical and usage data such as IP address, browser type, pages visited, and interactions with the platform, collected to operate, secure, and improve the Service.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Note on wellbeing surveys:</strong> Where a Client uses the VIBE Pulse wellbeing module, responses are treated as need-to-know and, where the platform supports it, are reported to Clients only in aggregate with small response groups suppressed, to protect individual staff confidentiality.
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="section-number">04</div>
+    <h2>How We Collect It</h2>
+    <p>We collect Personal Information:</p>
+    <ul>
+      <li><strong>Directly from you</strong> — when you contact us, request a demo, subscribe to the Service, or use the platform as an administrator;</li>
+      <li><strong>From our Clients</strong> — administrators upload or enter staff details, and end users submit nominations and other content, on behalf of the Client organisation;</li>
+      <li><strong>Automatically</strong> — through your use of our website and platform (for example, server logs and security-related technical data).</li>
+    </ul>
+    <p>Where it is reasonable and practicable, we collect Personal Information directly from the individual concerned. Much end-user information, however, is provided to us by our Clients — see Section 6.</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="section-number">05</div>
+    <h2>Why We Collect &amp; How We Use It</h2>
+    <p>We collect and use Personal Information for the following purposes:</p>
+    <ul>
+      <li>To provide, operate, and deliver the Service — including generating recognition certificates and delivering them by email on behalf of a Client;</li>
+      <li>To create and manage administrator accounts and authenticate users;</li>
+      <li>To communicate with Clients about their account, support requests, and service updates;</li>
+      <li>To process payments and issue invoices and receipts;</li>
+      <li>To maintain the security and integrity of the platform and prevent misuse;</li>
+      <li>To improve and develop our products and services, including through de-identified, aggregated analytics;</li>
+      <li>To comply with our legal obligations.</li>
+    </ul>
+    <p>We only use Personal Information for the purposes for which it was collected, for a directly related secondary purpose you would reasonably expect, or where you have consented or the use is otherwise permitted or required by law. <strong>We do not sell or rent Personal Information.</strong></p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="section-number">06</div>
+    <h2>Our Role: Controller vs Processor</h2>
+    <p>For Personal Information about our own Client contacts and administrators, VIBE Recognition is the entity that determines how that information is handled.</p>
+    <p>For Personal Information about a Client's <strong>end users</strong> (staff nominators and nominees, and any data entered into optional modules), VIBE Recognition acts as a service provider handling that information <strong>on behalf of, and under the instructions of, the Client</strong>. The Client is responsible for:</p>
+    <ul>
+      <li>having a lawful basis to collect and provide that information to us;</li>
+      <li>informing its staff that the platform is used for staff recognition and related purposes, and how their information will be handled;</li>
+      <li>obtaining any consents required under the Privacy Act, applicable workplace policies, or enterprise agreements.</li>
+    </ul>
+    <p>If you are an employee of one of our Clients and have questions about how your information is used, please contact your employer in the first instance, as they control that information.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="section-number">07</div>
+    <h2>Disclosure to Third Parties</h2>
+    <p>We do not sell Personal Information. We disclose Personal Information only in the following circumstances:</p>
+    <h3>7.1 Service providers</h3>
+    <p>We use trusted third-party providers to run our Service. These handle Personal Information only to the extent needed to perform their function for us, and are engaged under confidentiality and data-protection obligations. They include providers of:</p>
+    <ul>
+      <li>cloud hosting and database infrastructure;</li>
+      <li>email delivery (transactional emails such as certificates and account notifications);</li>
+      <li>secure object/file storage (for example, logos and certificate templates);</li>
+      <li>payment processing (for billing and receipts);</li>
+      <li>security services such as bot/abuse protection on public forms, and (where enabled) error monitoring.</li>
+    </ul>
+    <h3>7.2 To the relevant Client</h3>
+    <p>End-user information is accessible to the Client organisation that provided it, through their administrator account, as part of delivering the Service to them.</p>
+    <h3>7.3 Legal and safety</h3>
+    <p>We may disclose Personal Information where required or authorised by law, to a regulator or law-enforcement body, to establish or defend a legal claim, or where we reasonably believe disclosure is necessary to prevent a serious threat to an individual's life, health, or safety.</p>
+    <h3>7.4 Business transfers</h3>
+    <p>If our business is sold or restructured, Personal Information may be transferred to the successor entity, subject to this Privacy Policy and applicable law.</p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="section-number">08</div>
+    <h2>Direct Marketing &amp; Email</h2>
+    <p>We may send you information about our products and services where you are an existing Client contact or have expressed interest, and where permitted by the Privacy Act and the <em>Spam Act 2003</em> (Cth). Every commercial electronic message we send includes a way to unsubscribe, and we will action opt-out requests promptly.</p>
+    <p>Transactional emails sent by the platform (such as recognition certificates, welcome emails, and reminders) are sent on behalf of the relevant Client. The Client is responsible for ensuring it has the appropriate consent or authority to send those messages to its staff. You can ask us not to use your information for direct marketing at any time by contacting us using the details in Section 18.</p>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="section-number">09</div>
+    <h2>Overseas Disclosure &amp; Data Residency</h2>
+    <p>We aim to store Client data with reputable infrastructure providers and to keep it within Australia where practicable. However, some of our service providers (for example, email delivery, payment processing, or security services) may store or process Personal Information outside Australia, including in countries such as the United States.</p>
+    <p>Where Personal Information is disclosed to an overseas recipient, we take reasonable steps to ensure the recipient handles it in a manner consistent with the APPs, including through contractual data-protection commitments. By using the Service, you acknowledge that your Personal Information may be handled overseas on this basis.</p>
+    <div class="warning-box">
+      <strong>Please verify before publishing:</strong> the specific providers and the countries in which they store data should be confirmed against your current infrastructure so this section is accurate for your setup.
+    </div>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10">
+    <div class="section-number">10</div>
+    <h2>Cookies &amp; Analytics</h2>
+    <p>Our platform uses strictly necessary cookies to keep you signed in securely and to protect against cross-site request forgery. These are essential to the operation of the Service and cannot be switched off through the platform.</p>
+    <p>Our website may use limited cookies or similar technologies to understand how visitors use the site so we can improve it. You can control cookies through your browser settings; disabling essential cookies may prevent you from signing in to the platform.</p>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section" id="s11">
+    <div class="section-number">11</div>
+    <h2>Data Security</h2>
+    <p>We take the security of Personal Information seriously and implement reasonable technical and organisational measures designed to protect it from misuse, interference, loss, and unauthorised access, modification, or disclosure. These measures include:</p>
+    <ul>
+      <li>encrypted data transmission (HTTPS/TLS);</li>
+      <li>encryption of sensitive data at rest;</li>
+      <li>hashed passwords and signed, expiring authentication tokens;</li>
+      <li>two-factor authentication for administrator accounts;</li>
+      <li>cross-site request forgery (CSRF) protection on authenticated actions;</li>
+      <li>rate limiting, account lockout, and bot/abuse protection on public forms;</li>
+      <li>access controls that segregate each Client's data by tenant.</li>
+    </ul>
+    <p>Despite these measures, no method of transmission or storage over the internet is completely secure, and we cannot guarantee absolute security. You are responsible for keeping your account credentials confidential and notifying us of any suspected unauthorised access.</p>
+  </div>
+
+  <!-- Section 12 -->
+  <div class="section" id="s12">
+    <div class="section-number">12</div>
+    <h2>Data Retention &amp; Deletion</h2>
+    <p>We retain Personal Information only for as long as it is needed for the purposes described in this policy, or as required by law. For Client data, we generally retain it for the duration of the subscription and for a period of 12 months following termination, after which it is permanently deleted unless a longer period is required by law.</p>
+    <p>A Client may request earlier deletion of its data at any time by written notice to us. Where we no longer need Personal Information and are not required to retain it, we will take reasonable steps to destroy it or de-identify it.</p>
+  </div>
+
+  <!-- Section 13 -->
+  <div class="section" id="s13">
+    <div class="section-number">13</div>
+    <h2>Accessing &amp; Correcting Your Information</h2>
+    <p>Under APP 12 and APP 13, you have the right to request access to the Personal Information we hold about you, and to ask us to correct it if it is inaccurate, out of date, incomplete, irrelevant, or misleading.</p>
+    <p>To make a request, contact us using the details in Section 18. We will respond within a reasonable period (generally within 30 days) and will verify your identity before providing access. There is no fee to make a request, though we may charge a reasonable cost for providing access in some circumstances. If we decline a request, we will explain why in writing and how you may complain.</p>
+    <p>If you are an employee of one of our Clients, requests to access or correct end-user information are usually best directed to your employer, who controls that information; we will assist the Client to fulfil such requests.</p>
+  </div>
+
+  <!-- Section 14 -->
+  <div class="section" id="s14">
+    <div class="section-number">14</div>
+    <h2>Data Breach Notification</h2>
+    <p>We maintain procedures to detect, assess, and respond to data breaches. In the event of an "eligible data breach" that is likely to result in serious harm to affected individuals, we will notify the affected Client and, where required, the affected individuals and the Office of the Australian Information Commissioner (OAIC), in accordance with the Notifiable Data Breaches (NDB) scheme under the Privacy Act.</p>
+  </div>
+
+  <!-- Section 15 -->
+  <div class="section" id="s15">
+    <div class="section-number">15</div>
+    <h2>Children's Privacy</h2>
+    <p>Our Service is designed for use by organisations and their staff, and is not directed at children. We do not knowingly collect Personal Information from children through our website. Where a Client operates in a school or education setting and uses the platform to manage staff (rather than students), the platform is intended for staff/administrator use. If you believe a child's Personal Information has been provided to us, please contact us so we can address it.</p>
+  </div>
+
+  <!-- Section 16 -->
+  <div class="section" id="s16">
+    <div class="section-number">16</div>
+    <h2>Making a Complaint</h2>
+    <p>If you believe we have breached the APPs or mishandled your Personal Information, please contact us first using the details in Section 18. We take complaints seriously and will acknowledge your complaint and aim to respond within a reasonable period (generally within 30 days).</p>
+    <p>If you are not satisfied with our response, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC):</p>
+    <div class="highlight-box">
+      <strong>Office of the Australian Information Commissioner (OAIC)</strong><br>
+      Website: <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a><br>
+      Phone: 1300 363 992
+    </div>
+  </div>
+
+  <!-- Section 17 -->
+  <div class="section" id="s17">
+    <div class="section-number">17</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal obligations. The current version is always available at <a href="/privacy">viberecognition.com.au/privacy</a>, with the effective date shown at the top. Where we make material changes, we will take reasonable steps to notify Clients. Your continued use of the Service after changes take effect constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Section 18 -->
+  <div class="section" id="s18">
+    <div class="section-number">18</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, wish to access or correct your information, or would like to make a privacy complaint, please contact us:</p>
+    <div class="highlight-box" style="margin-top: 20px;">
+      <strong>VIBE Recognition — Privacy</strong><br>
+      Perth, Western Australia, Australia<br>
+      ABN 47 172 497 544<br><br>
+      Email: <a href="mailto:info@viberecognition.com.au">info@viberecognition.com.au</a><br>
+      Website: <a href="https://viberecognition.com.au">viberecognition.com.au</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 13px; color: #9ca3af;">
+      <em>This Privacy Policy was prepared with reference to the Privacy Act 1988 (Cth) and the Australian Privacy Principles as they apply to software-as-a-service businesses. It is intended as a starting point and does not constitute legal advice. VIBE Recognition recommends seeking advice from a qualified Australian solicitor to ensure this policy is appropriate for your specific circumstances and kept current with changes in law.</em>
+    </p>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">VIBE</div>
+  <div class="footer-tag">Recognition</div>
+  <p style="margin-bottom: 12px;">
+    <a href="/">Home</a> &nbsp;·&nbsp;
+    <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+    <a href="mailto:info@viberecognition.com.au">Contact</a>
+  </p>
+  <p>© 2026 VIBE Recognition. All rights reserved. ABN 47 172 497 544 &nbsp;·&nbsp; Privacy Policy v1.0 — 22 August 2026</p>
+  <p style="margin-top: 8px; font-size: 11px; color: #475569;">
+    Proudly Australian · Perth, Western Australia
+  </p>
+</footer>
+
+</body>
+</html>
